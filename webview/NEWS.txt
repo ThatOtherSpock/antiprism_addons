@@ -1,0 +1,78 @@
+NEWS for Webview (https://www.interocitors.com/polyhedra/webview/index.html)
+
+Version 2.4
+xx-xx-23 Roger Kaufman <polyhedrasmith@gmail.com>
+         Changes
+            offview.py
+               reverse transparency from 0 (invisible) to 1.0 (opaque))
+
+Version 2.3
+10-21-23 Roger Kaufman <polyhedrasmith@gmail.com>
+         Changes
+            offview.py, x3dview.py
+               made default sleep 4 seconds for hopefully less failures        
+            fixed error messages
+            replaced os.command() with subprocess.Popen where possible
+
+Version 2.2
+09-05-23 Roger Kaufman <polyhedrasmith@gmail.com>
+         Changes
+            x3dview.py
+              fixed url's
+
+Version 2.1
+08-31-23 Roger Kaufman <polyhedrasmith@gmail.com>
+         Changes
+            offview.py
+               added url Simple-Off-Viewer Live Window at www.interocitors.com
+               bug, -rotax should allow floating point numbers
+
+Version 2.0
+08-24-23 Roger Kaufman <polyhedrasmith@gmail.com>
+         New Programs
+            x3dview.py: to view VRML/X3D files on line with browser
+                        extra ability
+                          to convert VRML 1.0 to VRML 2.0
+                          to convert VRML 2.0 to X3D
+                          to gzip the output
+                          to write output instead of viewing
+            offview.cygwin.bat, x3dview.cygwin.bat
+               for running from Windows Explorer using Cygwin64
+            offview.wrl2.bat, x3dview.wrl2.bat
+               for running from Windows Explorer using WSL instead
+               of Cygwin64
+         Changes
+            Renamed webview.py to offview.py
+
+Version 1.3
+07-11-23 Roger Kaufman <polyhedrasmith@gmail.com>
+         Changes
+            Added -sleep parameter webview_server.py
+            moved server termination task to webview_server.py
+            allow up to an hour sleep (kill server delay) in webview.py
+            webview.bat bug fixes
+            restored off example files to zip
+
+Version 1.2
+05-29-23 Roger Kaufman <polyhedrasmith@gmail.com>
+         Changes
+            Added -port parameter to webview.py and webview_server.py
+            url 2 domain name changed to asliceofcuriosity.fr/blog
+            License change
+            
+Version 1.1
+05-20-23 Roger Kaufman <polyhedrasmith@gmail.com>
+         Changes
+            Removed formerly required customization
+            Use Python TemporaryDirectory() for temporary working directory
+            Added -sleep parameter for use as server time extension
+            Added -url parameter to choose between viewer pages
+            Added -browser parameter to choose between browsers
+            Added path for google chrome as is in Ubuntu 22.04
+            webview.desktop requires no customization, standard icon
+            webview.png and webview.ico for icons are included
+            check for null input
+
+Version 1.0         
+05-10-23 Roger Kaufman <polyhedrasmith@gmail.com>
+         Initial Release

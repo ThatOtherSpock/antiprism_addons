@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.1//EN" "http://www.web3d.org/specifications/x3d-3.1.dtd">
+<X3D profile="Immersive" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.1.xsd" version="3.1">
+ <head>
+  <meta name="title" content="cube.x3d"/>
+  <meta name="description" content="Generated from Meshlab X3D Exported"/>
+  <meta name="created" content="11 August 2023"/>
+  <meta name="generator" content="Meshlab X3D Exported, http://www.meshlab.net"/>
+ </head>
+ <Scene>
+  <Shape>
+   <IndexedFaceSet coordIndex="0 1 2 -1 0 2 3 -1 4 3 2 -1 4 2 5 -1 6 0 3 -1 6 3 4 -1 1 0 6 -1 1 6 7 -1 5 2 1 -1 5 1 7 -1 7 6 4 -1 7 4 5 -1" solid="false" normalPerVertex="false">
+    <Coordinate point="0.5 0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 0.5 0.5 0.5 0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 -0.5"/>
+    <Normal vector="0 1 0 0 1 0 0 0 1 0 0 1 1 0 0 1 0 0 0 0 -1 0 0 -1 -1 0 0 -1 0 0 0 -1 0 0 -1 0"/>
+   </IndexedFaceSet>
+  </Shape>
+ </Scene>
+</X3D>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D profile="Interchange" version="3.0"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
+     xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd">
+<head>
+	<meta name="generator" content="tovrmlx3d, https://castle-engine.io/view3dscene.php#section_converting" />
+	<meta name="source" content="vr2file.wrl" />
+</head>
+<Scene>
+	<Collision
+		enabled="false">
+		<Group>
+			<Transform
+				translation="0 1 0">
+				<Group>
+					<Shape>
+						<Appearance>
+							<Material
+								emissiveColor="0.100000001490116 0.300000011920929 0.300000011920929" />
+						</Appearance>
+						<Box
+							size="0.100000001490116 0.100000001490116 4" />
+					</Shape>
+				</Group>
+				<Transform
+					rotation="0 1 0 1.57079005241394">
+					<Group>
+						<Shape>
+							<Appearance>
+								<Material
+									emissiveColor="0.300000011920929 0.100000001490116 0.300000011920929" />
+							</Appearance>
+							<Cylinder
+								radius="0.100000001490116"
+								height="0.200000002980232" />
+						</Shape>
+					</Group>
+					<Transform
+						rotation="-1 0 0 1.57079005241394">
+						<Transform
+							rotation="1 0 0 1.57079005241394">
+							<Transform
+								translation="0 -0.200000002980232 0">
+								<Shape>
+									<Appearance>
+										<Material DEF="_v2%0"
+											emissiveColor="0.300000011920929 0.300000011920929 0.100000001490116" />
+									</Appearance>
+									<Cone
+										bottomRadius="0.200000002980232"
+										height="0.400000005960464" />
+								</Shape>
+								<Transform
+									translation="0 0.400000005960464 0">
+									<Shape>
+										<Appearance>
+											<Material USE="_v2%0" />
+										</Appearance>
+										<Cylinder
+											radius="0.0199999995529652"
+											height="0.400000005960464" />
+									</Shape>
+								</Transform>
+							</Transform>
+						</Transform>
+					</Transform>
+				</Transform>
+			</Transform>
+			<SpotLight
+				global="true"
+				intensity="0.899999976158142"
+				location="0 1 0"
+				direction="0 -1 0"
+				cutOffAngle="0.699999988079071" />
+			<Group>
+				<Shape>
+					<Appearance>
+						<Material DEF="_DefMat" />
+					</Appearance>
+					<IndexedFaceSet
+						solid="false"
+						creaseAngle="0.5"
+						coordIndex="0 1 2 3 -1 0 4 5 1 -1 0 3 7 4 -1">
+						<Coordinate
+							point="-2 -3 -2 -2 -3 2 2 -3 2 2 -3 -2 -2 1 -2 -2 1 2 2 1 2 2 1 -2" />
+					</IndexedFaceSet>
+				</Shape>
+			</Group>
+			<Anchor
+				url='"http://www.foo.edu/CowProject/AboutCows.html"'>
+				<Transform
+					translation="0 1 0">
+					<Inline
+						url='"http://www.foo.edu/3DObjects/cow.wrl"' />
+				</Transform>
+			</Anchor>
+		</Group>
+	</Collision>
+</Scene>
+</X3D>

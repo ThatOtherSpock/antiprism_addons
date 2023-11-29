@@ -1,0 +1,337 @@
+#VRML V2.0 utf8
+
+NavigationInfo {
+   type ["EXAMINE", "ANY"]
+}
+
+Background { skyColor [ 0.9020 0.9020 0.9020 ] }
+
+DirectionalLight { intensity 0 ambientIntensity 0.5}
+
+Group {
+   children [
+      DEF unnamed_camera_1 Viewpoint {
+         position 0 0 20.95328137
+         orientation 0 1 0 0
+         fieldOfView 0.39
+         description "unnamed_camera_1"
+      }
+      DEF default_camera_0 Viewpoint {
+         position 0 0 20.95328137
+         orientation 0 1 0 0
+         fieldOfView 0.39
+         description "default_camera_0"
+      }
+   ]
+}
+
+# Start of geometry stdin
+
+
+PROTO V_stdin [
+   field SFVec3f C 0 0 0    # centre
+   field SFColor clr 1.0000 0.5020 0.0000     # colour
+   field SFFloat trn 0.0000     # transparency
+]
+{
+   Transform {
+      translation IS C
+      children [
+         Shape {
+            appearance Appearance {
+               material Material {
+                  diffuseColor IS clr
+                  transparency IS trn
+               }
+            }
+            geometry Sphere {
+               radius 0.06
+            }
+         }
+      ]
+   }
+}
+
+PROTO E_stdin [
+   field SFVec3f C 0 0 0     # centre
+   field SFRotation R 1 0 0 0     # rotation
+   field SFColor clr 0.8000 0.6000 0.8000    # colour
+   field SFFloat trn 0.0000     # transparency
+   field SFFloat rad 0.04    # radius
+   field SFFloat ht 1   # height
+]
+{
+   Transform {
+      translation IS C
+      rotation IS R
+      children [
+         Shape {
+            appearance Appearance {
+               material Material {
+                  diffuseColor IS clr
+                  transparency IS trn
+               }
+            }
+            geometry Cylinder {
+               radius IS rad
+               height IS ht
+            }
+         }
+      ]
+   }
+}
+
+PROTO F0_stdin [
+   field MFInt32 ci [0 0 0 -1]  # coordinate index node
+   field SFNode vc NULL         # coords
+   field SFColor clr 0.8000 0.9020 0.9020  # colour
+   field SFFloat trn 0.0000  # transparency
+]
+{
+   Shape {
+      appearance Appearance {
+         material Material {
+            diffuseColor IS clr
+            transparency IS trn
+         }
+      }
+      geometry IndexedFaceSet  {
+         colorPerVertex FALSE
+         solid FALSE
+         coord IS vc
+         coordIndex IS ci
+      }
+  }
+}
+
+PROTO F_stdin [
+   field MFInt32 ci [0 0 0 -1]  # coordinate index node
+   field SFNode vc NULL         # coords
+   field MFColor clrs [0 0 0]  # colours
+   field SFFloat trn 0.0000  # transparency
+]
+{
+   Shape {
+      appearance Appearance {
+         material Material {
+            transparency IS trn
+         }
+      }
+      geometry IndexedFaceSet  {
+         colorPerVertex FALSE
+         solid FALSE
+         coord IS vc
+         coordIndex IS ci
+         color Color { color IS clrs }
+      }
+  }
+}
+# scene transformations
+Transform {
+   translation -0 -0 -0
+   children [
+
+# forget indentation and carry on...
+
+# Vertex Coordinates
+Shape {
+   geometry IndexedFaceSet {
+      coord DEF CRDS Coordinate {
+         point [
+	1 2 3,
+	1 2 -3,
+	1 -2 3,
+	1 -2 -3,
+	-1 2 3,
+	-1 2 -3,
+	-1 -2 3,
+	-1 -2 -3,
+	1 2 3,
+	1 -2 -3,
+	-1 2 -3,
+	-1 -2 3,
+	1 0 0,
+	-1 0 0,
+	0 0 3,
+	0 0 -3,
+	0 2 0,
+	0 -2 0
+         ]
+      }
+   }
+}
+
+# Vertex elements
+V_stdin { C 1 2 3 }
+V_stdin { C 1 2 -3 }
+V_stdin { C 1 -2 3 }
+V_stdin { C 1 -2 -3 }
+V_stdin { C -1 2 3 }
+V_stdin { C -1 2 -3 }
+V_stdin { C -1 -2 3 }
+V_stdin { C -1 -2 -3 }
+V_stdin { C 1 2 3 }
+V_stdin { C 1 -2 -3 }
+V_stdin { C -1 2 -3 }
+V_stdin { C -1 -2 3 }
+V_stdin { C 1 0 0 }
+V_stdin { C -1 0 0 }
+V_stdin { C 0 0 3 }
+V_stdin { C 0 0 -3 }
+V_stdin { C 0 2 0 }
+V_stdin { C 0 -2 0 }
+
+
+
+# Edge elements
+E_stdin { C 0.5 0 1.5 R 0.9486833 -0 0.31622777 -1.5708
+	  ht 3.16228 }
+E_stdin { C 0.5 0 -1.5 R -0.9486833 0 0.31622777 -1.5708
+	  ht 3.16228 }
+E_stdin { C 0.5 1 0 R -0 0 1 -2.67795
+	  ht 2.23607 }
+E_stdin { C 0.5 -1 0 R 0 0 1 -0.463648
+	  ht 2.23607 }
+E_stdin { C -0.5 0 1.5 R 0.9486833 0 -0.31622777 -1.5708
+	  ht 3.16228 }
+E_stdin { C -0.5 0 -1.5 R -0.9486833 0 -0.31622777 -1.5708
+	  ht 3.16228 }
+E_stdin { C -0.5 1 0 R -0 0 -1 -2.67795
+	  ht 2.23607 }
+E_stdin { C -0.5 -1 0 R 0 0 -1 -0.463648
+	  ht 2.23607 }
+E_stdin { C 0 1 1.5 R -1 0 0 -2.1588
+	  ht 3.60555 }
+E_stdin { C 0 -1 1.5 R -1 0 0 -0.982794
+	  ht 3.60555 }
+E_stdin { C 0 1 -1.5 R 1 -0 0 -2.1588
+	  ht 3.60555 }
+E_stdin { C 0 -1 -1.5 R 1 -0 0 -0.982794
+	  ht 3.60555 }
+E_stdin { C 1 2 0 R -1 0 0 -1.5708
+	  ht 6 }
+E_stdin { C 1 0 3 R 0 0 1 -0
+	  ht 4 }
+E_stdin { C 0 2 3 R 0 0 1 -1.5708
+	  ht 2 }
+E_stdin { C 1 0 -3 R 0 0 1 -0
+	  ht 4 }
+E_stdin { C 0 2 -3 R 0 0 1 -1.5708
+	  ht 2 }
+E_stdin { C 1 -2 0 R -1 0 0 -1.5708
+	  ht 6 }
+E_stdin { C 0 -2 3 R 0 0 1 -1.5708
+	  ht 2 }
+E_stdin { C 0 -2 -3 R 0 0 1 -1.5708
+	  ht 2 }
+E_stdin { C -1 2 0 R -1 0 0 -1.5708
+	  ht 6 }
+E_stdin { C -1 0 3 R 0 0 1 -0
+	  ht 4 }
+E_stdin { C -1 0 -3 R 0 0 1 -0
+	  ht 4 }
+E_stdin { C -1 -2 0 R -1 0 0 -1.5708
+	  ht 6 }
+E_stdin { C 1 0 0 R -1 0 0 -0.982794
+	  ht 7.2111 }
+E_stdin { C 0 2 0 R -0.9486833 0 0.31622777 -1.5708
+	  ht 6.32456 }
+E_stdin { C 0 0 3 R 0 0 1 -0.463648
+	  ht 4.47214 }
+E_stdin { C 0 0 -3 R -0 0 1 -2.67795
+	  ht 4.47214 }
+E_stdin { C 0 -2 0 R 0.9486833 -0 0.31622777 -1.5708
+	  ht 6.32456 }
+E_stdin { C -1 0 0 R 1 -0 0 -0.982794
+	  ht 7.2111 }
+
+
+
+# Face elements
+F0_stdin { vc USE CRDS ci [ 14 17 12 -1  16 14 12 -1  15 17 13 -1  16 15 13 -1  
+16 13 14 -1  16 12 15 -1  13 17 14 -1  12 17 15 -1  
+   ]
+	 }
+
+
+
+# close scene transformations
+   ]
+}
+
+PROTO LL_stdin [
+   field SFColor lab_clr 0.0000 0.0000 0.0000   field MFString lab_txt ""
+   field SFVec3f lab_pos 0 0 0
+]
+{
+   Transform {
+      translation IS lab_pos
+      children [
+         Billboard {
+            axisOfRotation 0 0 0
+            children [
+               Shape {
+                  geometry Text { string IS lab_txt fontStyle FontStyle { size 0.249444 justify "MIDDLE"} }
+                  appearance Appearance {
+                     material Material {
+                        diffuseColor IS lab_clr
+                     }
+                  }
+               }
+            ]
+         }
+      ]
+   }
+}
+
+PROTO VL_stdin [
+   field SFColor clr 0.5020 0.0000 0.0000
+   field MFString txt ""
+   field SFVec3f pos 0 0 0
+]
+{
+   Group {
+   children [
+      LL_stdin { lab_clr IS clr lab_txt IS txt lab_pos IS pos }
+      ]
+   }
+}
+
+
+PROTO EL_stdin [
+   field SFColor clr 0.0000 0.5020 0.0000
+   field MFString txt ""
+   field SFVec3f pos 0 0 0
+]
+{
+   Group {
+   children [
+      LL_stdin { lab_clr IS clr lab_txt IS txt lab_pos IS pos }
+      ]
+   }
+}
+
+
+PROTO FL_stdin [
+   field SFColor clr 0.0000 0.0000 0.5020
+   field MFString txt ""
+   field SFVec3f pos 0 0 0
+]
+{
+   Group {
+   children [
+      LL_stdin { lab_clr IS clr lab_txt IS txt lab_pos IS pos }
+      ]
+   }
+}
+
+# scene transformations
+Transform {
+   translation -0 -0 -0
+   children [
+
+# forget indentation and carry on...
+
+# close scene transformations
+   ]
+}

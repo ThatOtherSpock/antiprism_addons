@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=X3Dview
+MimeType=model/vrml;model/x3d+xml
+Exec=bash -c "x3dview.py %f"
+Icon=x3dview
+Terminal=false

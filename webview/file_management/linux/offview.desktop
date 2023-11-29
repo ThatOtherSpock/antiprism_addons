@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Offview
+MimeType=model/x-geomview-off;
+Exec=bash -c "offview.py %f"
+Icon=offview
+Terminal=false
