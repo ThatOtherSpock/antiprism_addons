@@ -1,6 +1,6 @@
-define REL_DATE @RELEASE_DATE@
-define VER @PACKAGE_VERSION@
-define VER_PRE @PACKAGE_NAME@-
+define REL_DATE 1 November 2023
+define VER 0.1
+define VER_PRE antiprism_addons-
 define ANTIPRISM_RELEASE <<VER_PRE>><<VER>>
 define ANTIPRISM_SOURCE_FILE <<ANTIPRISM_RELEASE>>.tar.gz
 define ANTIPRISM_WIN64_FILE <<ANTIPRISM_RELEASE>>_w64_install.exe
@@ -29,16 +29,16 @@ define __TOC_2__(x)        <ul>x<p></ul>
 define __TOC_3__(x)        <ul>x</ul>
 define __TOC_4__(x)        <ul>x</ul>
 
-define CGIDIR http://www.antiprism.com/cgi-bin/
+define CGIDIR http://www.interocitors.com/cgi-bin/
 //define CGIDIR http://localhost/cgi-bin/
 
-define PROJECT_PAGE https://github.com/antiprism/antiprism
-define SITE_PAGE http://www.antiprism.com/
+define PROJECT_PAGE https://github.com/ThatOtherSpock/antiprism_addons
+define SITE_PAGE http://www.interocitors.com/antiprism_addons
 
-define TITLE_SITE Antiprism - 
+define TITLE_SITE Antiprism Addons - 
 
-define EMAIL adrian@antiprism.com
-define AUTHOR Adrian Rossiter
+define EMAIL PolyhedraSmith@gmail.com
+define AUTHOR Roger Kaufman
 
 define TITLE_HEAD <h1>\
 <!-- TITLE_START -->\

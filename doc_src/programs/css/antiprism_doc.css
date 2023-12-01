@@ -5,15 +5,15 @@ body {
 
 .header { 
   color: orange;
-  background: #602525;
+  background: #000000;
   padding: 2px;
-  border: 1px solid #602525;
-  overflow: auto;
+  border: 1px solid #000000;
+  overflow: hidden;
   width: 100%;
 }
 
 h1 {
-  color: #D04040;
+  color: #00888B;
   border: thin solid black;
   text-align: center
 }
@@ -25,13 +25,13 @@ h1.main_title {
 }
 
 h2 {
-  color: #A01010;
+  color: #00888B;
   background: transparent;
   font-weight: bold
 }
 
 h3 {
-  color: #501020;
+  color: #00888B;
   background: transparent
 }
 
@@ -117,15 +117,15 @@ PRE.prog_help {
 
 .surround {
   color: white;
-  background: #602525
+  background: #000000
 }
 
 
 .footer, .footer a:link, .footer a:visited, .footer a:active {
   color: white;
-  background: #602525;
+  background: #000000;
   padding: 2px;
-  border: 1px solid #602525;
+  border: 1px solid #000000;
   overflow: auto;
   width: 100%;
   text-align: center;

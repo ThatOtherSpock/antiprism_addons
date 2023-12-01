@@ -13,5 +13,5 @@
 #endif
 </small>
 </div>
-<a href="<<PATH_UP>>index.html"><img src="<<PATH_UP>>css/logo_ant01.gif" alt="Antiprism" border="0" width="251" height="55"></a>
+<a href="<<PATH_UP>>index.html"><img src="<<PATH_UP>>css/logo_ant01.gif" alt="Antiprism Addons" border="0" width="504" height="55"></a>
 </div>

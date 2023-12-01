@@ -8,162 +8,67 @@
 <<TITLE_HEAD>>
 
 <<CONT_S_START>>
-<small><a href="#programs">Antiprism&nbsp;Programs</a></small>
+<small><a href="#programs">Antiprism&nbsp;Addon&nbsp;Programs</a></small>
 <<BARSPACE>>
-<small><a href="#general">General&nbsp;Documentation</a></small>
-<<BARSPACE>>
-<small><a href="#external">Links</a></small>
+<small><a href="#general">General&nbsp;Antiprism</a></small>
 <<CONT_S_END>>
 
 
 <h2><a>
-Antiprism Documentation
+Antiprism Addons Documentation
 </a></h2>
 
 <h3><a name="programs">
 Programs
 </a></h3>
 
-<b>Display</b>
-<ul>
-<li><a href="antiview.html">antiview</a> - interactive OFF file viewer
-</ul>
-
 <b>Conversion</b>
 <ul>
-<li><a href="off2pov.html">off2pov</a> - convert OFF files to POV format
-<li><a href="off2vrml.html">off2vrml</a> - convert OFF files to VRML format
-<li><a href="off2crds.html">off2crds</a> - convert an OFF file to a coordinate file
-<li><a href="off2dae.html">off2dae</a> - convert an OFF file to Collada (DAE) format
-<li><a href="off2obj.html">off2obj</a> - convert an OFF file to Wavefront OBJ format
-<li><a href="obj2off.html">obj2off</a> - convert a Wavefront OBJ file to OFF format
+<li><a href="off2txt.html">off2txt</a> - convert an OFF file to Hedron format
 </ul>
 
 <b>Manipulation</b>
 <ul>
-<li><a href="off_util.html">off_util</a> - utilities for OFF files (orientation, merging, etc)
-<li><a href="off_trans.html">off_trans</a> - transformations (rotations, translations, etc) of OFF files
-<li><a href="off_color.html">off_color</a> - add colours to an OFF file
-<li><a href="off_color_radial.html">off_color_radial</a> - radial colouring based on symmetry
-<li><a href="off_align.html">off_align</a> - alignment of OFF files 
-<li><a href="planar.html">planar</a> - convert overlapping coplanar polygons into non-overlapping tiles
-</ul>
-
-<b>Reporting</b>
-<ul>
-<li><a href="off_report.html">off_report</a> - report global measures (e.g. area, volume, centroid), maxima, and counts
-<li><a href="off_query.html">off_query</a> - list element data
-<li><a href="off_normals.html">off_normals</a> - utility for working with normals
-</ul>
-  
-<b>Transformation</b>
-<ul>
-<li><a href="conv_hull.html">conv_hull</a> - convex hulls (using Qhull)
-<li><a href="pol_recip.html">pol_recip</a> - polar reciprocals (duals)
-<li><a href="canonical.html">canonical</a> - canonicalize a polyhedron
-<li><a href="geodesic.html">geodesic</a> - geodesic spheres
-<li><a href="zono.html">zono</a> - zonohedra
-<li><a href="stellate.html">stellate</a> - polyhedron stellations
-<li><a href="conway.html">conway</a> - Conway Notation transformations
-<li><a href="wythoff.html">wythoff</a> -  Wythoff-style constructions
-<li><a href="poly_kscope.html">poly_kscope</a> - polyhedral kaleidoscope
-<li><a href="to_nfold.html">to_nfold</a> - change the rotational symmetry of a polyhedron
-<li><a href="symmetro.html">symmetro</a> - polyhedra with regular polygons at symmetry axes
-<li><a href="kcycle.html">kcycle</a> - kaleidocycle rings of polyhedron 
-<li><a href="leonardo.html">leonardo</a> - Leonardo da Vinci style models
-<li><a href="poly_form.html">poly_form</a> - make face-regular, equal-edge and unscrambled polyhedra
-<li><a href="col_util.html">col_util</a> - colour utilities, plots and blending
-<li><a href="lat_util.html">lat_util</a> - lattice utilities
+<li><a href="off_sym.html">off_sym</a> - embed symmetry elements into an off file
 </ul>
 
 <b>Models</b>
 <ul>
-  <li><a href="off_util.html">off_util</a> - output
-    <a href="http://www.antiprism.com/examples/150_named_models/index.html">named resource models</a>
-<li><a href="polygon.html">polygon</a> - polygon based polyhedra (prisms, pyramids, etc)
-<li><a href="miller.html">miller</a> - Miller's stellations of the icosahedron
-<li><a href="tetra59.html">tetra59</a> - 59 tetrahedra with rational dihedral angles
-<li><a href="iso_delta.html">iso_delta</a> - isohedral deltahedra
-<li><a href="iso_kite.html">iso_kite</a> - isohedral kiteohedra
-<li><a href="unitile2d.html">unitile2d</a> - uniform tilings on a surface
-<li><a href="n_icons.html">n_icons</a> - sphericon like polyhedra 
-<li><a href="waterman.html">waterman</a> - Waterman polyhedra
-<li><a href="sph_rings.html">sph_rings</a> - rings of points on a sphere
-<li><a href="repel.html">repel</a> - equilibrium of points repelling on a sphere
-<li><a href="bravais.html">bravais</a> - Bravais lattices
+<li><a href="kaleido.html">kaleido</a> - uniform polyhedra, ported for off file output (Zvi Har'El)
 </ul>
 
-<h3><a name="extra">
-Extra Programs
+<br>
+
+<h3><a name="python">
+Python Programs
 </a></h3>
 
-Extra programs are more loosely related to polyhedra, incomplete or of
-limited use. They are provided for interest only.
 <ul>
-<li><a href="rotegrity.html">rotegrity</a> - make rotegrity and nexorede models
-<li><a href="sweep_edges.html">sweep_edges</a> - sweep edges to make a surface
-<li><a href="mmop_origami.html">mmop_origami</a> - multimodular origami polyhedra
-<li><a href="poly_weave.html">poly_weave</a> - weave based on a polyhedron
-<li><a href="kaleido.html">kaleido</a> - uniform polyhedra (Zvi Har'El)
-<li><a href="spidron.html">spidron</a> - spidronise a polyhedron
-<li><a href="dome_layer.html">dome_layer</a> - dome strut arrangements
-<li><a href="jitterbug.html">jitterbug</a> - jitterbug transformation
-<li><a href="lat_grid.html">lat_grid</a> - lattices and grids with integer coordinates
-<li><a href="string_art.html">string_art</a> - string figures
-<li><a href="off2txt.html">off2txt</a> - convert an OFF file to Hedron format
+(coming soon)
 </ul>
+
+<br>
+
+<h3><a name="projects">
+On Line Viewer Project
+</a></h3>
+
+<ul>
+<li><a href="https://www.interocitors.com/polyhedra/webview/">Webview</a>
+    - 3D viewing using a web browser
+</ul>
+
+<br>
 
 <h3><a name="general">
-General Documentation
+Antiprism Documentation (via antiprism.com)
 </a></h3>
-
 <ul>
-<li><a href="resources.html">Antiprism Resource Files</a>
-<li><a href="import_export.html">Importing and Exporting Models</a>
-<li><a href="named_cols.html">Named Colours in Antiprism</a>
-<li><a href="edges.html">Using edges in Antiprism</a>
-<li><a href="off_format.html">OFF format description</a>
+<li><a href="https://www.antiprism.com">Home Page</a>
+<li><a href="https://www.antiprism.com/programs/index.html#general">General Documentation</a>
+<li><a href="https://www.antiprism.com/programs/index.html#external">Links to Complementary Programs</a>
 </ul>
 
-<br><p>
-
-<h2><a name="external">
-Links to Complementary Programs
-</a></h2>
-
-<b>Using OFF format</b>
-<ul>
-<li><a href="https://github.com/antiprism/antiprism_python">Antiprism Python</a>
-    - polyhedron modelling scripts
-<li><a href="http://www.geomview.org/">Geomview</a>
-    - 3D viewing and processing
-<li><a href="http://www.javaview.de/">JavaView</a>
-    - 3D viewing and processing (Java)
-<li><a href="https://www.interocitors.com/polyhedra/webview/">Webview</a>
-    (by Roger Kaufman)
-    - 3D viewing using a web browser
-<li><a href="https://github.com/Wagyx/simple-off-viewer">simple-off-viewer</a>
-    (by Wagyx)
-    - 3D viewer to embed in a web page
-<li><a href="http://www.springie.com/">Springie</a>
-    (by Tim Tyler)
-    - 3D viewing and processing (Java)
-<li><a href="http://meshlab.sourceforge.net/">MeshLab</a>
-    - Converts from OFF to other formats, e.g. STL, 3DS, DXF
-<li><a href="http://www.qhull.org/">Qhull</a> -
-    convex hulls and delaunay triangulation
-</ul>
-
-<b>Handling Antiprism Export Formats</b>
-<ul>
-<li><a href="http://www.povray.org/">POV-Ray</a>
-    - Persistence of Vision Raytracer, using pov format
-<li><a href="https://www.sketchup.com/plans-and-pricing/sketchup-free">Sketchup</a>
-    - CAD program, will import Collada
-<li><a href="https://www.web3d.org/x3d/content/examples/X3dResources.html">VRML Viewers</a>
-    - Links to VRML viewers
-<li><a href="http://www.imagemagick.org/">ImageMagick</a>
-    - Image processing, builds animations
-</ul>
+<br>
 
 #include "<<END>>"

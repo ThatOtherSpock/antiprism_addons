@@ -17,7 +17,7 @@ Next:
 
 <div class=footer>
 <small>
-   Antiprism Documentation -
+   Antiprism Addons Documentation -
    <a href="<<SITE_PAGE>>"><<SITE_PAGE>></a> -
    Generated <<TIMESTAMP>>
 </small>

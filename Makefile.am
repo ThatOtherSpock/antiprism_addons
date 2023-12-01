@@ -1,7 +1,7 @@
 
 ACLOCAL_AMFLAGS = -I m4
 
-SUBDIRS = base/tesselator base/qhull base/muparser base src src_extra
+SUBDIRS = base/tesselator base/qhull base/muparser base src src_extra addons
 if BUILD_ANTIVIEW
 SUBDIRS += aview
 endif
@@ -56,7 +56,7 @@ prepare_release:
 	cd doc_src && ./gtml doc.gtp && rm tmp.txt
 
 format_all:
-	for f in base/*.cc base/*.h src/*.cc src/*.h aview/*.cc aview/*.h src_extra/*.cc ; do \
+	for f in base/*.cc base/*.h src/*.cc src/*.h aview/*.cc aview/*.h src_extra/*.cc addons/*.cc; do \
 	clang-format -style=file -i $$f; \
 	done
 
