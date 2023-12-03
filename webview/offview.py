@@ -155,7 +155,7 @@ parser.add_argument('-l', '--blackEdges', dest='useBaseColor', action='store_fal
                     help='paint edges black (default: use defined colors)')
 
 parser.add_argument('-t', '--transparency', type=float_range(0.0, 1.0), default=1.0,
-                    help='face transparency. from 0 (invisible) to 1.0 (opaque)) (default: %(default)s)')
+                    help='face transparency. from 0 (invisible) to 1.0 (opaque) (default: %(default)s)')
 
 parser.add_argument('-B', '--backgroundColor', default="cccccc",
                     help='background color in hexadecimal (default: %(default)s)')

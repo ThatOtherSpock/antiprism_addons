@@ -1,10 +1,10 @@
 NEWS for Webview (https://www.interocitors.com/polyhedra/webview/index.html)
 
 Version 2.4
-xx-xx-23 Roger Kaufman <polyhedrasmith@gmail.com>
+12-03-23 Roger Kaufman <polyhedrasmith@gmail.com>
          Changes
             offview.py
-               reverse transparency from 0 (invisible) to 1.0 (opaque))
+               reverse transparency from 0 (invisible) to 1.0 (opaque)
 
 Version 2.3
 10-21-23 Roger Kaufman <polyhedrasmith@gmail.com>
