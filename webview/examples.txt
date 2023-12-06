@@ -13,8 +13,8 @@ Examples using Antiprism command line input (www.antiprism.com)
 
 off_util geo_t3 | offview.py -t 0.25
 conway p^2sD | off_color_radial | offview.py -x v e
-n_icons -n 32/8 -t 4 -f C | offview.py
-n_icons -n 48/12 -t 6 -f C -z 3 -M 36,27 | offview.py -url 2
+n_icons -n 32/8 -t 4 | offview.py
+n_icons -n 48/12 -t 6 -z 3 -M 36,27 | offview.py -url 2
 
 
 ==================================================================
@@ -45,8 +45,8 @@ Examples using Antiprism command line input (www.antiprism.com)
 
 off2vrml geo_t3 | x3dview.py
 conway p^2sD | off_color_radial | off2vrml -x ve | x3dview.py
-n_icons -n 32/8 -t 4 -f C | off2vrml | x3dview.py
-n_icons -n 48/12 -t 6 -f C -z 3 -M 36,27 | off2vrml | x3dview.py -url 2
+n_icons -n 32/8 -t 4 | off2vrml | x3dview.py
+n_icons -n 48/12 -t 6 -z 3 -M 36,27 | off2vrml | x3dview.py -url 2
  
 
 ===============================

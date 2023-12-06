@@ -29,6 +29,7 @@ import subprocess
 import webbrowser
 import fileinput
 import tempfile
+import shutil
 
 #https://stackoverflow.com/questions/55324449/how-to-specify-a-minimum-or-maximum-float-value-with-argparse
 def float_range(mini,maxi):
@@ -70,6 +71,21 @@ def port_checker(a):
 #https://www.scivision.dev/python-detect-wsl/
 def in_wsl() -> bool:
     return 'microsoft-standard' in os.uname().release
+    
+def command_exists(command_name):
+    exists = False
+    proc = 'alias | grep %s' % (command_name)
+    p = subprocess.run(["/bin/bash", "-i", "-c", proc], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    if (p.returncode == 0):
+      exists = True
+    else:
+      if (shutil.which(command_name)):
+        exists = True
+      else:
+        command_name = command_name + ".exe"
+        if (shutil.which(command_name)):
+          exists = True
+    return (exists, command_name)
 
 # defaults are set here
 __version__ = 2.3
@@ -119,7 +135,7 @@ else:
   elif in_wsl():
     prefix = "/mnt/c"
   else:
-    print(f"{__file__}: error: platform not found")
+    print(f"{__file__}: error: platform not found", file=sys.stderr)
     exit(1)
 
   browser_list = [
@@ -185,14 +201,14 @@ args = parser.parse_args()
 
 #https://stackoverflow.com/questions/18569045/how-do-i-get-a-list-to-print-one-word-per-line
 if (args.url == 0 ):
-  print('\n'.join(url_help))
+  print('\n'.join(url_help), file=sys.stderr)
   sys.exit()
 
 if (args.browser == 0 ):
-  print('\n'.join(browser_help))
+  print('\n'.join(browser_help), file=sys.stderr)
   sys.exit()
 elif not os.path.isfile(browser_list[args.browser]):
-  print(f"{__file__}: error: browser %s not found" % browser_list[args.browser])
+  print(f"{__file__}: error: browser %s not found" % browser_list[args.browser], file=sys.stderr)
   sys.exit()
 
 verticesActive=True
@@ -234,16 +250,24 @@ fout.close()
 
 #https://stackoverflow.com/questions/2507808/how-to-check-whether-a-file-is-empty-or-not
 if os.stat(full_name).st_size == 0:
-  print(f"{__file__}: error: empty input")
+  print(f"{__file__}: error: empty input", file=sys.stderr)
   sys.exit()
 
 # change to temporary directory and start server
 os.chdir(tmp_dir.name)
 
 # launch server with subprocess in background
-proc = 'webview_server.py -port %s -sleep %s 2>/dev/null &' % (str(args.port), str(args.sleep))
-sp = subprocess.Popen(["/bin/bash", "-i", "-c", proc])
-sp.communicate()
+command_name = "webview_server.py"
+result = command_exists(command_name)
+command_found = result[0]
+command_name = result[1]
+if (command_found):
+  proc = 'webview_server.py -port %s -sleep %s 2>/dev/null &' % (str(args.port), str(args.sleep))
+  sp = subprocess.Popen(["/bin/bash", "-i", "-c", proc])
+  sp.communicate()
+else:
+  print(f"{__file__}: error: %s not found" % (command_name))
+  sys.exit(1)
 
 # webbrower.get(...) returns instantly
 # subprocess.call(webbrower.get(...)) does not return

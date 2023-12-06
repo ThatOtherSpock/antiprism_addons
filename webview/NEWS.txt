@@ -1,5 +1,12 @@
 NEWS for Webview (https://www.interocitors.com/polyhedra/webview/index.html)
 
+Version 2.5
+12-05-23 Roger Kaufman <polyhedrasmith@gmail.com>
+         Changes
+            offview.py
+            x3dview.py
+               check for existance of webview_server.py
+
 Version 2.4
 12-03-23 Roger Kaufman <polyhedrasmith@gmail.com>
          Changes

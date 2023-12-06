@@ -306,10 +306,18 @@ if (args.writeout):
   run_proc("cat x3dview.wrl")
   exit(0)
 
-# launch server with subprocess in background (don't use run_proc())
-proc = 'webview_server.py -port %s -sleep %s 2>/dev/null &' % (str(args.port), str(args.sleep))
-sp = subprocess.Popen(["/bin/bash", "-i", "-c", proc])
-sp.communicate()
+# launch server with subprocess in background
+command_name = "webview_server.py"
+result = command_exists(command_name)
+command_found = result[0]
+command_name = result[1]
+if (command_found):
+  proc = 'webview_server.py -port %s -sleep %s 2>/dev/null &' % (str(args.port), str(args.sleep))
+  sp = subprocess.Popen(["/bin/bash", "-i", "-c", proc])
+  sp.communicate()
+else:
+  print(f"{__file__}: error: %s not found" % (command_name))
+  sys.exit(1)
 
 # webbrower.get(...) returns instantly
 # subprocess.call(webbrower.get(...)) does not return
