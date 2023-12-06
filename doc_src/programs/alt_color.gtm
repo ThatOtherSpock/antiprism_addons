@@ -1,0 +1,49 @@
+#define HL_PROG class=curpage
+
+#include "<<HEAD>>"
+#include "<<START>>"
+
+
+<<TITLE_HEAD>>
+
+<<TOP_LINKS>>
+
+<<USAGE_START>>
+<pre class="prog_help">
+<<__SYSTEM__(../addons/<<BASENAME>> -h > tmp.txt)>>
+#entities ON
+#include "tmp.txt"
+#entities OFF
+</pre>
+<<USAGE_END>>
+
+
+<<EXAMPLES_START>>
+Display Skilling's figure showing there are places where more than two faces
+meet at an edge. off_color shows edges with the same condition
+<<CMDS_START>>
+alt_color -F h skilling | antiview -x ve
+off_color -e N skilling | antiview -v 0.02
+<<CMDS_END>>
+
+Display the 10th miller stellation showing there are places where more than two
+faces meet at an edge. off_color shows edges with the same condition
+<<CMDS_START>>
+miller 10 | alt_color -F h | antiview
+miller 10 | off_color -e N | antiview -v 0.02
+<<CMDS_END>>
+
+Display an example of a model generated with Conway Notation using an older
+planarization method that isn't completely convex
+<<CMDS_START>>
+conway m^3C -p b | alt_color -F b -E b | antiview -v 0.01
+<<CMDS_END>>
+<<EXAMPLES_END>>
+
+
+<<NOTES_START>>
+<i><<BASENAME>></i> was developed by
+<a href="http://www.interocitors.com/polyhedra/">Roger Kaufman</a>,
+<<NOTES_END>>
+
+#include "<<END>>"

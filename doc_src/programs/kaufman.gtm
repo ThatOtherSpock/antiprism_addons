@@ -1,0 +1,43 @@
+#define HL_PROG class=curpage
+
+#include "<<HEAD>>"
+#include "<<START>>"
+
+
+<<TITLE_HEAD>>
+
+<<TOP_LINKS>>
+
+<<USAGE_START>>
+<pre class="prog_help">
+<<__SYSTEM__(../python/<<BASENAME>>.py -h > tmp.txt)>>
+#entities ON
+#include "tmp.txt"
+#entities OFF
+</pre>
+<<USAGE_END>>
+
+
+<<EXAMPLES_START>>
+Do 5 interations of merging base with dual and taking convex hull
+<<CMDS_START>>
+kaufman.py cube 5 -v | antiview
+<<CMDS_END>>
+
+Produce the same model a above but use conway notation join operator
+<<CMDS_START>>
+kaufman.py cube 5 -c -v | antiview
+<<CMDS_END>>
+<<EXAMPLES_END>>
+
+
+<<NOTES_START>>
+<i><<BASENAME>></i> was developed by
+<a href="http://www.interocitors.com/polyhedra/">Roger Kaufman</a>.
+
+The original intent of the program was to generate a new class of polyhedra.
+But since these models are just the conway join operation it now serves as an
+example of how this process works.
+<<NOTES_END>>
+
+#include "<<END>>"

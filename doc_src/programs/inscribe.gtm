@@ -1,0 +1,34 @@
+#define HL_PROG class=curpage
+
+#include "<<HEAD>>"
+#include "<<START>>"
+
+
+<<TITLE_HEAD>>
+
+<<TOP_LINKS>>
+
+<<USAGE_START>>
+<pre class="prog_help">
+<<__SYSTEM__(../python/<<BASENAME>>.py -h > tmp.txt)>>
+#entities ON
+#include "tmp.txt"
+#entities OFF
+</pre>
+<<USAGE_END>>
+
+
+<<EXAMPLES_START>>
+Inscribe an octahedron by vertices inside an icosahedron by edges
+<<CMDS_START>>
+inscribe.py octahedron icosahedron -e V -n 0 -E E -N 0 | antiview -x f
+<<CMDS_END>>
+<<EXAMPLES_END>>
+
+
+<<NOTES_START>>
+<i><<BASENAME>></i> was developed by
+<a href="http://www.interocitors.com/polyhedra/">Roger Kaufman</a>.
+<<NOTES_END>>
+
+#include "<<END>>"

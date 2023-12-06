@@ -1,0 +1,41 @@
+#define HL_PROG class=curpage
+
+#include "<<HEAD>>"
+#include "<<START>>"
+
+
+<<TITLE_HEAD>>
+
+<<TOP_LINKS>>
+
+<<USAGE_START>>
+<pre class="prog_help">
+<<__SYSTEM__(../python/<<BASENAME>>.py -h > tmp.txt)>>
+#entities ON
+#include "tmp.txt"
+#entities OFF
+</pre>
+<<USAGE_END>>
+
+
+<<EXAMPLES_START>>
+Output both a 5 sided antiprism and a 5 sided trapezohedron and which is a
+stellation of the antiprism
+<<CMDS_START>>
+trapstel.py 5 -m t a | antiview
+<<CMDS_END>>
+
+Output both a 7/3 sided antiprism and a 7/3 sided trapezohedron and which is a
+stellation of the antiprism. Rotate the antiprism to the trapezohedron
+<<CMDS_START>>
+trapstel.py 7/3 -m t a -r | antiview
+<<CMDS_END>>
+<<EXAMPLES_END>>
+
+
+<<NOTES_START>>
+<i><<BASENAME>></i> was developed by
+<a href="http://www.interocitors.com/polyhedra/">Roger Kaufman</a>.
+<<NOTES_END>>
+
+#include "<<END>>"

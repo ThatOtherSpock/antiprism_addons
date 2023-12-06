@@ -1,0 +1,57 @@
+#define HL_PROG class=curpage
+
+#include "<<HEAD>>"
+#include "<<START>>"
+
+
+<<TITLE_HEAD>>
+
+<<TOP_LINKS>>
+
+<<USAGE_START>>
+<pre class="prog_help">
+<<__SYSTEM__(../addons/<<BASENAME>> -h > tmp.txt)>>
+#entities ON
+#include "tmp.txt"
+#entities OFF
+</pre>
+<<USAGE_END>>
+
+
+<<EXAMPLES_START>>
+Make a cube for display in LiveGraphics3D
+<<CMDS_START>>
+off_util cube | off2m > cube.m
+<<CMDS_END>>
+
+Use LiveGraphics3D coloring
+<<CMDS_START>>
+off_util cube | off2m -l > cube.m
+<<CMDS_END>>
+
+Make a thickened red cube frame with blue vertices
+<<CMDS_START>>
+off_util cube | off2m -X ve -e 0.01 -E red -V blue > cube.m
+<<CMDS_END>>
+<<EXAMPLES_END>>
+
+
+<<NOTES_START>>
+<i><<BASENAME>></i> was developed by
+<a href="http://www.interocitors.com/polyhedra/">Roger Kaufman</a>.
+<p>
+Converting off files to m files is for the most part obsolete and is here only
+as a legacy program. Converting m files to off format using <i>m2off</i> might be what
+you want.
+<p>
+Many years ago, I put together an
+<a href="http://www.antiprism.com/misc/off2m_tester.zip">off2m testing package</a>
+which can be downloaded and used to view the off2m output.
+<p>
+LiveGraphics3D used java and is now considered obsolete. It may still work
+under a browser that run java apps such as Microsoft Edge in Internet Explorer
+mode. The development page is here:
+<a href="https://www.martin-kraus.org/LiveGraphics3D/">LiveGraphics3D Site</a>.
+<<NOTES_END>>
+
+#include "<<END>>"

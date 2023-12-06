@@ -1,0 +1,50 @@
+#define HL_PROG class=curpage
+
+#include "<<HEAD>>"
+#include "<<START>>"
+
+
+<<TITLE_HEAD>>
+
+<<TOP_LINKS>>
+
+<<USAGE_START>>
+<pre class="prog_help">
+<<__SYSTEM__(../python/<<BASENAME>>.py -h > tmp.txt)>>
+#entities ON
+#include "tmp.txt"
+#entities OFF
+</pre>
+<<USAGE_END>>
+
+
+<<EXAMPLES_START>>
+Use a star polygon to blend 7 colors of the rainbow map
+<<CMDS_START>>
+color_wheel -m w rainbow7 7 | antiview
+<<CMDS_END>>
+
+Use a grid to blend 7 colors of the rainbow map
+<<CMDS_START>>
+color_wheel -m g rainbow7 7 | antiview
+<<CMDS_END>>
+
+Use a globe to blend 7 colors of the rainbow map
+<<CMDS_START>>
+color_wheel -m G rainbow7 7 | antiview
+<<CMDS_END>>
+
+Use a star polygon to blend 3 colors of the rainbow map. Pass -y to planar
+to blend the colors as RYB instead of RGB
+<<CMDS_START>>
+color_wheel -m w rainbow3 3 -y | antiview
+<<CMDS_END>>
+<<EXAMPLES_END>>
+
+
+<<NOTES_START>>
+<i><<BASENAME>></i> was developed by
+<a href="http://www.interocitors.com/polyhedra/">Roger Kaufman</a>.
+<<NOTES_END>>
+
+#include "<<END>>"

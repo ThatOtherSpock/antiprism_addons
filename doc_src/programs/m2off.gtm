@@ -1,0 +1,47 @@
+#define HL_PROG class=curpage
+
+#include "<<HEAD>>"
+#include "<<START>>"
+
+
+<<TITLE_HEAD>>
+
+<<TOP_LINKS>>
+
+<<USAGE_START>>
+<pre class="prog_help">
+<<__SYSTEM__(../addons/<<BASENAME>> -h > tmp.txt)>>
+#entities ON
+#include "tmp.txt"
+#entities OFF
+</pre>
+<<USAGE_END>>
+
+
+<<EXAMPLES_START>>
+Convert a hypothetical LiveGraphics3D snub dodecahedron model to OFF format
+<<CMDS_START>>
+m2off snub_dod.m > snub_dod.off
+<<CMDS_END>>
+
+Convert a hypothetical LiveGraphics3D snub dodecahedron model to OFF format,
+coloring it similarly to the way LiveGraphics3D does, and view it
+<<CMDS_START>>
+m2off -C color.off snub_dod.m | off_color -f L -l color.off | antiview
+<<CMDS_END>>
+<<EXAMPLES_END>>
+
+
+<<NOTES_START>>
+<i><<BASENAME>></i> was developed by
+<a href="http://www.interocitors.com/polyhedra/">Roger Kaufman</a>.
+<p>
+If faces in the .m file are displayed using LiveGraphics3D lighting
+it is possible that they may not also have particular colors
+assigned to them. In this case the color used in the OFF file will
+be inherited from another element. It is likely that this will not be
+what is wanted, in which case the faces can be recolored using
+<i>off_color</i>.
+<<NOTES_END>>
+
+#include "<<END>>"

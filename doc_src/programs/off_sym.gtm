@@ -1,0 +1,42 @@
+#define HL_PROG class=curpage
+
+#include "<<HEAD>>"
+#include "<<START>>"
+
+
+<<TITLE_HEAD>>
+
+<<TOP_LINKS>>
+
+<<USAGE_START>>
+<pre class="prog_help">
+<<__SYSTEM__(../addons/<<BASENAME>> -h > tmp.txt)>>
+#entities ON
+#include "tmp.txt"
+#entities OFF
+</pre>
+<<USAGE_END>>
+
+
+<<EXAMPLES_START>>
+Add all symmetry elements of a Tetrahedron making the model faces invisible
+<<CMDS_START>>
+off_sym -s a tet -x f | antiview
+<<CMDS_END>>
+
+Rotate a antiprism and add all the elements of D3v subsymmetry retaining
+the initial alignment
+<<CMDS_START>>
+off_trans -R 10,20,-30 ant12 | off_sym -s a -y D3v -z | antiview
+<<CMDS_END>>
+<<EXAMPLES_END>>
+
+
+<<NOTES_START>>
+<i><<BASENAME>></i> was developed by
+<a href="http://www.interocitors.com/polyhedra/">Roger Kaufman</a>,
+based on code by
+<a href="http://www.antiprism.com/">Adrian Rossiter</a>
+<<NOTES_END>>
+
+#include "<<END>>"

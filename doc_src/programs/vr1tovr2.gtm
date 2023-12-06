@@ -1,0 +1,44 @@
+#define HL_PROG class=curpage
+
+#include "<<HEAD>>"
+#include "<<START>>"
+
+
+<<TITLE_HEAD>>
+
+<<TOP_LINKS>>
+
+<<USAGE_START>>
+<pre class="prog_help">
+<<__SYSTEM__(../addons/<<BASENAME>> -h > tmp.txt)>>
+#entities ON
+#include "tmp.txt"
+#entities OFF
+</pre>
+<<USAGE_END>>
+
+
+<<EXAMPLES_START>>
+Convert a vrml1 file to vrml2 file
+<<CMDS_START>>
+vr1tovr2 (vrml1 file) > (vrml2 file)
+<<CMDS_END>>
+
+Convert a vrml1 file to vrml2 file. If it isn't a vrml1 file, pass the file
+unchanged to output
+<<CMDS_START>>
+vr1tovr2 -p (vrml1 file) > (vrml2 file)
+<<CMDS_END>>
+<<EXAMPLES_END>>
+
+
+<<NOTES_START>>
+<i><<BASENAME>></i> was developed by
+<a href="http://www.interocitors.com/polyhedra/">Roger Kaufman</a>.
+
+The program is a wrapper for vrml1tovrml2.exe. The program only works when
+cross compiled for Windows and executed in a Windows environment.
+<a href="https://www.interocitors.com/polyhedra/vr1tovr2/index.html">Package is here</a>.
+<<NOTES_END>>
+
+#include "<<END>>"

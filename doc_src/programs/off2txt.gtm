@@ -1,0 +1,37 @@
+#define HL_PROG class=curpage
+
+#include "<<HEAD>>"
+#include "<<START>>"
+
+
+<<TITLE_HEAD>>
+
+<<TOP_LINKS>>
+
+<<USAGE_START>>
+<pre class="prog_help">
+<<__SYSTEM__(../addons/<<BASENAME>> -h > tmp.txt)>>
+#entities ON
+#include "tmp.txt"
+#entities OFF
+</pre>
+<<USAGE_END>>
+
+
+<<EXAMPLES_START>>
+Convert a cube to Hedron text format
+<<CMDS_START>>
+off2txt std_cube &gt; cube.txt
+<<CMDS_END>>
+<<EXAMPLES_END>>
+
+
+<<NOTES_START>>
+<i><<BASENAME>></i> was developed by
+<a href="http://www.interocitors.com/polyhedra/">Roger Kaufman</a>.
+<p>
+It converts an OFF file to a format that can be read by
+<a href="http://www.orchidpalms.com/polyhedra/hedron.html">Hedron</a>.
+<<NOTES_END>>
+
+#include "<<END>>"

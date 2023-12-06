@@ -1,0 +1,66 @@
+#define HL_PROG class=curpage
+
+#include "<<HEAD>>"
+#include "<<START>>"
+
+
+<<TITLE_HEAD>>
+
+<<TOP_LINKS>>
+
+<<USAGE_START>>
+<pre class="prog_help">
+<<__SYSTEM__(../webview/<<BASENAME>>.py -h > tmp.txt)>>
+#entities ON
+#include "tmp.txt"
+#entities OFF
+</pre>
+<<USAGE_END>>
+
+
+<<EXAMPLES_START>>
+Display a geodesic model at one quarter opacity
+<<CMDS_START>>
+off_util geo_t3 | off2vrml | x3dview.py
+<<CMDS_END>>
+
+Produce a model with conway notation, color it with off_color_radial and then
+display it without vertices or edges
+<<CMDS_START>>
+conway p^2sD | off_color_radial | off2vrml -x ve | x3dview.py
+<<CMDS_END>>
+
+Produce a model with n_icons and display it
+<<CMDS_START>>
+n_icons -n 32/8 -t 4 | off2vrml | x3dview.py
+<<CMDS_END>>
+
+Produce a model with n_icons and display it in a windowed view
+<<CMDS_START>>
+n_icons -n 48/12 -t 6 -z 3 -M 36,27 | off2vrml | x3dview.py -url 2
+<<CMDS_END>>
+
+Plot 256 random colors. Display on default viewer (1) or windowed viewer (2)
+<<CMDS_START>>
+col_util -d 1 -m rand256 | off2vrml -v 0.02 | x3dview -url 1
+col_util -d 1 -m rand256 | off2vrml -v 0.02 | x3dview -url 2
+<<CMDS_END>>
+
+Display Uniform Compound 5 in a windows view (using url 2)
+<<CMDS_START>>
+off_util uc5 | off2vrml -x ve | x3dview -url 2
+<<CMDS_END>>
+
+Display Uniform Compound 30 in a windows view
+<<CMDS_START>>
+off_util uc30 | off2vrml -v 0.02 | x3dview -url 2
+<<CMDS_END>>
+<<EXAMPLES_END>>
+
+
+<<NOTES_START>>
+<i><<BASENAME>></i> was developed by
+<a href="http://www.interocitors.com/polyhedra/">Roger Kaufman</a>.
+<<NOTES_END>>
+
+#include "<<END>>"

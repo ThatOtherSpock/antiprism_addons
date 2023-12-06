@@ -1,0 +1,42 @@
+#define HL_PROG class=curpage
+
+#include "<<HEAD>>"
+#include "<<START>>"
+
+
+<<TITLE_HEAD>>
+
+<<TOP_LINKS>>
+
+<<USAGE_START>>
+<pre class="prog_help">
+<<__SYSTEM__(../python/<<BASENAME>>.py -h > tmp.txt)>>
+#entities ON
+#include "tmp.txt"
+#entities OFF
+</pre>
+<<USAGE_END>>
+
+
+<<EXAMPLES_START>>
+Of U27 (rhombicosidodecahedron), rotate face 0 to the top (y axis) and rotate
+vertex 28 to the front (z axis)
+<<CMDS_START>>
+rotyz.py u27 -e F -n 0 -E V -N 28 | antiview
+rotyz.py rhombicosidodecahedron -e F -n 0 -E V -N 28 | antiview
+<<CMDS_END>>
+
+Of geodesic 1 1 (icosahedral) rotate face 0 to the top (y axis) and rotate
+vertex 0 to the front (z axis)
+<<CMDS_START>>
+rotyz.py geo_1_1 -e F -n 0 -E V -N 0 | antiview
+<<CMDS_END>>
+<<EXAMPLES_END>>
+
+
+<<NOTES_START>>
+<i><<BASENAME>></i> was developed by
+<a href="http://www.interocitors.com/polyhedra/">Roger Kaufman</a>.
+<<NOTES_END>>
+
+#include "<<END>>"
