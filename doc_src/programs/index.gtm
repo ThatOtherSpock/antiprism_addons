@@ -10,6 +10,10 @@
 <<CONT_S_START>>
 <small><a href="#programs">Antiprism&nbsp;Addon&nbsp;Programs</a></small>
 <<BARSPACE>>
+<small><a href="#downloads">Downloads</a></small>
+<<BARSPACE>>
+<small><a href="#projects">Online Viewer Project</a></small>
+<<BARSPACE>>
 <small><a href="#general">General&nbsp;Antiprism</a></small>
 <<CONT_S_END>>
 
@@ -24,17 +28,22 @@ Programs
 
 <b>Conversion</b>
 <ul>
-<li><a href="off2txt.html">off2txt</a> - convert an OFF file to Hedron format
+<li><a href="off2txt.html">off2txt</a> - Convert an OFF file to Hedron format
+<li><a href="m2off.html">m2off</a> - Convert a LiveGraphics3D 'm' file to OFF format
+<li><a href="off2m.html">off2m</a> - Convert an OFF file to LiveGraphics3D 'm' format
+<li><a href="vr1tovr2.html">vr1tovr2</a> - Convert vrml 1.0 to vrml 2.0 via vrml1tovrml2.exe <a href="https://www.interocitors.com/polyhedra/vr1tovr2/index.html">(See here)</a>
 </ul>
 
 <b>Manipulation</b>
 <ul>
-<li><a href="off_sym.html">off_sym</a> - embed symmetry elements into an off file
+<li><a href="alt_color.html">alt_color</a> - Alternate Color Methods
+<li><a href="off_sym.html">off_sym</a> - Embed symmetry elements into an OFF file
 </ul>
 
 <b>Models</b>
 <ul>
-<li><a href="kaleido.html">kaleido</a> - uniform polyhedra, ported for off file output (Zvi Har'El)
+<li><a href="snoflake.html">snoflake</a> - Generate Snow Flake like models
+<li><a href="kaleido.html">kaleido</a> - Uniform Polyhedra, ported for OFF file output (Zvi Har'El)
 </ul>
 
 <br>
@@ -43,8 +52,18 @@ Programs
 Python Programs
 </a></h3>
 
+<b>Models</b>
 <ul>
-(coming soon)
+<li><a href="color_wheel.html">color_wheel.py</a> - Make various color wheels
+<li><a href="embeddip.html">embeddip.py</a> - Embed a dipyramid within a Cube in various positions
+<li><a href="inscribe.html">inscribe.py</a> - Inscribe one OFF model inside another OFF model
+<li><a href="kaufman.html">kaufman.py</a> - Make a convex hull of a base model merged with it's canonical reciprocal
+<li><a href="trapstel.html">trapstel.py</a> - Make a Trapezohedron that is both dual and stellation to an antiprism
+</ul>
+<b>Utilities</b>
+<ul>
+<li><a href="rotyz.html">rotyz.py</a> - Rotate an element of an OFF file to Y (0,1,0) and a second element to Z (0,0,1)
+<li><a href="stepview.html">stepview.py</a> - Step through and view OFF or OBJ files in a directory
 </ul>
 
 <br>
@@ -54,8 +73,30 @@ On Line Viewer Project
 </a></h3>
 
 <ul>
-<li><a href="https://www.interocitors.com/polyhedra/webview/">Webview</a>
-    - 3D viewing using a web browser
+<li><a href="https://www.interocitors.com/polyhedra/webview/">Webview</a> - 3D viewing using a web browser (link)
+<ul>
+<li><a href="offview.html">offview.py</a> - View an OFF file with an online html browser OFF file viewer
+<li><a href="x3dview.html">x3dview.py</a> - View VRML/X3D file with an online html browser VRML/X3D file viewer
+</ul>
+<br>
+<li>Online Test Pages
+<ul>
+  <li><a href="https://www.interocitors.com/polyhedra/offview/off_test/index.html" target="_blank">Simple-Off-Viewer Test Page</a><br></li>
+  <li><a href="https://www.interocitors.com/polyhedra/x3dview/x3d_test/index.html" target="_blank">X3D/VRML Test Page</a><br></li>
+  <li><a href="https://www.interocitors.com/polyhedra/showoff/off_test/index.html" target="_blank">Show-off Test Page</a><br></li>
+</ul>
+</ul>
+
+<br>
+
+<h3><a name="downloads">
+Download (coming soon)
+</a></h3>
+
+<ul>
+<li><a href="https://www.interocitors.com/polyhedra">Windows</a>
+<li><a href="https://www.interocitors.com/polyhedra">Linux</a>
+<li><a href="https://www.interocitors.com/polyhedra">Python</a>
 </ul>
 
 <br>
