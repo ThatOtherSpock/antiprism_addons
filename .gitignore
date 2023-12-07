@@ -111,4 +111,15 @@ python/antiprism_wrap.cc
 /python/distutils/dist
 /python/distutils/lib_src
 
+/src/.dirstamp
+/python/__pycache__/
+
+/addons/alt_color
+/addons/kaleido
+/addons/m2off
+/addons/off2m
+/addons/off2txt
+/addons/off_sym
+/addons/snoflake
+/addons/vr1tovr2
 

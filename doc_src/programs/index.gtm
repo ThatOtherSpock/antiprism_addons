@@ -19,7 +19,7 @@
 
 
 <h2><a>
-Antiprism Addons Documentation
+Antiprism Addons Documentation (<a href="https://www.interocitors.com/polyhedra/antiprism_addons/install_notes.html" target="_blank">Install Notes</a>)
 </a></h2>
 
 <h3><a name="programs">
@@ -31,7 +31,7 @@ Programs
 <li><a href="off2txt.html">off2txt</a> - Convert an OFF file to Hedron format
 <li><a href="m2off.html">m2off</a> - Convert a LiveGraphics3D 'm' file to OFF format
 <li><a href="off2m.html">off2m</a> - Convert an OFF file to LiveGraphics3D 'm' format
-<li><a href="vr1tovr2.html">vr1tovr2</a> - Convert vrml 1.0 to vrml 2.0 via vrml1tovrml2.exe <a href="https://www.interocitors.com/polyhedra/vr1tovr2/index.html">(See here)</a>
+<li><a href="vr1tovr2.html">vr1tovr2</a> - Convert vrml 1.0 to vrml 2.0 via vrml1tovrml2.exe (<a href="https://www.interocitors.com/polyhedra/vr1tovr2/index.html"><b>See here</b></a>)
 </ul>
 
 <b>Manipulation</b>
@@ -90,13 +90,13 @@ On Line Viewer Project
 <br>
 
 <h3><a name="downloads">
-Download (coming soon)
+Download
 </a></h3>
 
 <ul>
-<li><a href="https://www.interocitors.com/polyhedra">Windows</a>
-<li><a href="https://www.interocitors.com/polyhedra">Linux</a>
-<li><a href="https://www.interocitors.com/polyhedra">Python</a>
+<li><a href="https://drive.google.com/file/d/1SBXsDaUx7yjT1Urr7WE8qBiBHcJJOrmP/view?usp=drive_link">Windows</a>
+<li><a href="https://drive.google.com/file/d/1QWWdsmwxKE3aItDlrwSBkDje1lDSKS22/view?usp=drive_link">Linux</a>
+<li><a href="https://drive.google.com/file/d/1g5urjPxAl3yq1hN40moqz-8m1xw2PepA/view?usp=drive_link">Python</a>
 </ul>
 
 <br>
