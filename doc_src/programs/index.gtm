@@ -82,8 +82,8 @@ On Line Viewer Project
 <br>
 <li>Online Test Pages
 <ul>
-  <li><a href="https://www.interocitors.com/polyhedra/offview/off_test/index.html" target="_blank">Simple-Off-Viewer Test Page</a><br></li>
-  <li><a href="https://www.interocitors.com/polyhedra/x3dview/x3d_test/index.html" target="_blank">X3D/VRML Test Page</a><br></li>
+  <li><a href="https://www.interocitors.com/polyhedra/simple-off-viewer/off_test/simple-off-viewer.html" target="_blank">Simple-Off-Viewer Test Page</a><br></li>
+  <li><a href="https://www.interocitors.com/polyhedra/x_ite-x3d-browser/x3d_test/x_ite-x3d-browser.html" target="_blank">X_Ite-X3D-Browser Test Page</a><br></li>
   <li><a href="https://www.interocitors.com/polyhedra/showoff/off_test/index.html" target="_blank">Show-off Test Page</a><br></li>
 </ul>
 </ul>
