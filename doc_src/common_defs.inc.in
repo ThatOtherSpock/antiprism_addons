@@ -33,7 +33,7 @@ define CGIDIR http://www.interocitors.com/cgi-bin/
 //define CGIDIR http://localhost/cgi-bin/
 
 define PROJECT_PAGE https://github.com/ThatOtherSpock/antiprism_addons
-define SITE_PAGE http://www.interocitors.com/antiprism_addons
+define SITE_PAGE http://www.interocitors.com/polyhedra/antiprism_addons
 
 define TITLE_SITE Antiprism Addons - 
 
