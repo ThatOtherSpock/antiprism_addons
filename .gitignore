@@ -40,6 +40,9 @@ Doxyfile
 doc_src/common_defs.inc
 doc_src/doc.addons.gtp
 doc_src/doc.main.gtp
+doc_src/programs/index.addons.gtm
+doc_src/programs/index.main.gtm
+
 
 /doc/*
 *lib_docs/*
