@@ -9,72 +9,33 @@ define HEAD d_head.tpl
 define START d_start_frame.tpl
 define END d_end_frame.tpl
 
-timestamp $dd/$MM/$yyyy
-mtimestamp $dd.$MM.$yyyy
+timestamp $MM/$dd/$yyyy
+mtimestamp $MM.$dd.$yyyy
 
 ./doc/index.gtm 1 Programs and Documentation
 
-./doc/antiview.gtm 2 antiview - interactive OFF file viewer
-./doc/off2pov.gtm 2 off2pov - convert OFF files to POV format
-./doc/off2vrml.gtm 2 off2vrml - convert OFF files to VRML format
-./doc/off2crds.gtm 2 off2crds - convert an OFF file to a coordinate file
-./doc/off2dae.gtm 2 off2dae - convert an OFF file to Collada (DAE) format
-./doc/off2obj.gtm 2 off2obj - convert an OFF file to Wavefront OBJ format
-./doc/obj2off.gtm 2 obj2off - convert a Wavefront OBJ file to OFF format
-./doc/off_color.gtm 2 off_color - add colours to an OFF file
-./doc/off_color_radial.gtm 2 off_color_radial - radial colouring based on symmetry
-./doc/off_trans.gtm 2 off_trans - transformations (rotations etc) of OFF files
-./doc/off_align.gtm 2 off_align - alignment of OFF files
-./doc/off_util.gtm 2 off_util - utilities for OFF files
-./doc/planar.gtm 2 planar - convert overlapping coplanar polygons to tiles
-./doc/off_report.gtm 2 off_report - report global measures maxima and counts
-./doc/off_query.gtm 2 off_query - list element data
-./doc/off_normals.gtm 2 off_normals - utility for working with normals
-./doc/conv_hull.gtm 2 conv_hull - convex hulls (using Qhull)
-./doc/pol_recip.gtm 2 pol_recip - polar reciprocals (duals)
-./doc/canonical.gtm 2 canonical - canonicalize a polyhedon
-./doc/geodesic.gtm 2 geodesic - geodesic spheres
-./doc/zono.gtm 2 zono - zonohedra from OFF files
-./doc/stellate.gtm 2 stellate - polyhedron stellations
-./doc/conway.gtm 2 conway - Conway Notation transformations
-./doc/wythoff.gtm 2 wythoff - Wythoff-style constructions
-./doc/poly_kscope.gtm 2 poly_kscope - polyhedral kaleidoscope
-./doc/to_nfold.gtm 2 to_nfold - change the rotational symmetry of a polyhedron
-./doc/symmetro.gtm 2 symmetro - polyhedra with regular polygons at symmetry axes
-./doc/kcycle.gtm 2 kcycle - kaleidocycle rings of polyhedron
-./doc/leonardo.gtm 2 leonardo - Leonardo da Vinci style models
-./doc/poly_form.gtm 2 poly_form - make face-regular and unscramble models
-./doc/col_util.gtm 2 col_util - colour utilities including plots and blends
-./doc/lat_util.gtm 2 lat_util - lattice utilities
-./doc/polygon.gtm 2 polygon - polygon based polyhedra
-./doc/miller.gtm 2 miller - Miller's stellations of the icosahedron
-./doc/tetra59.gtm 2 tetra59 - 59 tetrahedra with rational dihedral angles
-./doc/iso_delta.gtm 2 iso_delta - isohedral deltahedra
-./doc/iso_kite.gtm 2 iso_kite - isohedral kite-faced polyhedra
-./doc/unitile2d.gtm 2 unitile2d - make uniform tilings on a surface
-./doc/n_icons.gtm 2 n_icons - sphericon like polyhedra 
-./doc/waterman.gtm 2 waterman - Waterman polyhedra
-./doc/sph_rings.gtm 2 sph_rings - rings of points on a sphere
-./doc/repel.gtm 2 repel - equilibrium of points repelling on a sphere
-./doc/bravais.gtm 2 bravais - Bravais lattices
+./doc/off2txt.gtm 2 off2txt - Convert an OFF file to Hedron format
+./doc/m2off.gtm 2 m2off - Convert a LiveGraphics3D 'm' file to OFF format
+./doc/off2m.gtm 2 off2m - Convert an OFF file to LiveGraphics3D 'm' format
+./doc/vr1tovr2.gtm 2 vr1tovr2 - Convert vrml 1.0 to vrml 2.0 via vrml1tovrml2.exe
+./doc/vrml2off.gtm 2 vrml2off - Convert vrml to OFF or to Hedron txt file
 
-./doc/rotegrity.gtm 2 EXTRA: rotegrity - make rotegrity and nexorede models
-./doc/sweep_edges.gtm 2 EXTRA: sweep_edges - sweep edges to make a surface
-./doc/mmop_origami.gtm 2 EXTRA: mmop_origami - multimodular polyhedron origami
-./doc/poly_weave.gtm 2 EXTRA: poly_weave - weave based on a polyhedron
-./doc/spidron.gtm 2 EXTRA: spidron - spidronise a polyhedron
-./doc/dome_layer.gtm 2 EXTRA: dome_layer - dome strut arrangements
-./doc/jitterbug.gtm 2 EXTRA: jitterbug - jitterbug transformation
-./doc/lat_grid.gtm 2 EXTRA: lat_grid - lattices and grids with integer coordinates
-./doc/string_art.gtm 2 EXTRA: string_art - string figures
+./doc/alt_color.gtm 2 alt_color - Alternate Color Methods
+./doc/off_sym.gtm 2 off_sym - Add visual symmetry elements to an OFF file
 
-./doc/resources.gtm 2 Antiprism Resource Files
-./doc/extras_readme.gtm 3 Antiprism Resources - Extras
-./doc/import_export.gtm 2 Import and Export
-./doc/named_cols.gtm 2 Named Colours in Antiprism
-./doc/color_maps.gtm 2 Colour maps in Antiprism
-./doc/edges.gtm 2 Using edges in Antiprism
-./doc/off_format.gtm 2 OFF format description
+./doc/snoflake.gtm 2 snoflake.py - Generate Snow Flake like models
+./doc/kaleido.gtm 2 kaleido.py - Uniform Polyhedra, ported for OFF file output (Zvi Har'El)
+
+./doc/color_wheel.gtm 2 color_wheel.py - Make various color wheels
+./doc/embeddip.gtm 2 embeddip.py - Embed a dipyramid within a cube in various positions
+./doc/inscribe.gtm 2 inscribe.py - Inscribe one OFF model inside another OFF model
+./doc/kaufman.gtm 2 kaufman.py - Make a convex hull of a base model merged with it's canonical reciprocal
+./doc/rotyz.gtm 2 rotyz.py - Rotate an element of an OFF file to Y (0,1,0) and a second element to Z (0,0,1)
+./doc/stepview.gtm 2 stepview.py - Step through and view OFF or OBJ files in a directory
+./doc/trapstel.gtm 2 trapstel.py - Make a Trapezohedron that is both dual and stellation to an antiprism
+
+./doc/offview.gtm 2 offview.py - View an OFF file with an online html browser OFF file viewer
+./doc/x3dview.gtm 2 x3dview.py - View VRML/X3D file with an online html browser VRML/X3D file viewer
 
 <<__SYSTEM__(cp -a ./doc/css <<OUTPUT_DIR>>doc)>>
 <<__SYSTEM__(cp -a ./doc/images <<OUTPUT_DIR>>doc)>>
