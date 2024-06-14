@@ -88,7 +88,7 @@ def command_exists(command_name):
     return (exists, command_name)
 
 # defaults are set here
-__version__ = 2.3
+__version__ = 3.0
 default_port = 8080
 default_sleep = 4
 default_url = 1
@@ -100,16 +100,16 @@ else:
 # url list. note port is as a string "PORT" to be replace by variable 'port'
 url_help = [
 f'0 - listing (set default_url in {__file__})',
-'1 - https://www.interocitors.com (python author\'s site)',
-'2 - https://asliceofcuriosity.fr (threejs author\'s site)',
-'3 - Simple-Off-Viewer Live Window at www.interocitors.com',
+'1 - https://www.interocitors.com full screen view (python author\'s site)',
+'2 - https://www.interocitors.com window view (python author\'s site)',
+'3 - https://asliceofcuriosity.fr (threejs author\'s site)',
 ]
 
 url_list = [
 'not used',
-'https://www.interocitors.com/polyhedra/offview.html?url=http://127.0.0.1:PORT/offview.off',
+'https://www.interocitors.com/polyhedra/offview.beta.html?url=http://127.0.0.1:PORT/offview.off',
+'https://www.interocitors.com/polyhedra/offwin.beta.html?url=http://127.0.0.1:PORT/offview.off',
 'https://asliceofcuriosity.fr/blog/extra/polyhedra-viewer-antiprism.html?url=http://127.0.0.1:PORT/offview.off',
-'https://www.interocitors.com/polyhedra/offwin.html?url=http://127.0.0.1:PORT/offview.off',
 ]
 
 # browser list
@@ -158,30 +158,39 @@ parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpForm
 parser.add_argument('off_file', nargs='?', type=argparse.FileType('r'), default=sys.stdin,
                     help='OFF file. can also be from standard input')
 
-parser.add_argument('-v', '--vertexRadius', type=float_range(0.0, 1.0), default=0.03,
+parser.add_argument('-v', '--vertex_radius', type=float_range(0.0, 1.0), default=0.03,
                     help='vertex sphere radius (range 0.0-1.0) (default: %(default)s)')
 
-parser.add_argument('-e', '--edgeRadius', type=float_range(0.0, 1.0), default=0.02,
+parser.add_argument('-e', '--edge_radius', type=float_range(0.0, 1.0), default=0.02,
                     help='edge cylinder radius (range 0.0-1.0) (default: %(default)s)')
 
-parser.add_argument('-x', '--hideElements', nargs='+', choices=['v','e','f'], default="",
+parser.add_argument('-x', '--hide_elements', nargs='+', choices=['v','e','f'], default="",
                     help='hide elements. to hide vertices, edges and faces')
 
-parser.add_argument('-l', '--blackEdges', dest='useBaseColor', action='store_false', default=True,
-                    help='paint edges black (default: use defined colors)')
+parser.add_argument('-l', '--black_edges', dest='use_base_color', action='store_false', default=True,
+                    help='paint edges black (overrides -V,-E) (default: use defined colors)')
+                    
+parser.add_argument('-V', '--vertex_color', default="none",
+                    help='vertex color override in hexadecimal (url 1,2) (default: %(default)s)')
+                    
+parser.add_argument('-E', '--edge_color', default="none",
+                    help='edge color override in hexadecimal (url 1,2) (default: %(default)s)')
+                    
+parser.add_argument('-F', '--face_color', default="none",
+                    help='face color override in hexadecimal (url 1,2) (default: %(default)s)')
 
-parser.add_argument('-t', '--transparency', type=float_range(0.0, 1.0), default=1.0,
-                    help='face transparency. from 0 (invisible) to 1.0 (opaque) (default: %(default)s)')
-
-parser.add_argument('-B', '--backgroundColor', default="cccccc",
+parser.add_argument('-B', '--background_color', default="cccccc",
                     help='background color in hexadecimal (default: %(default)s)')
 
-parser.add_argument('-rot', '--rotationSpeed', type=float, default=0,
+parser.add_argument('-rot', '--rotation_speed', type=float, default=0,
                     help='rotational speed (default: %(default)s)')
 
 # use -rotax=-x,y,z when x is negative
-parser.add_argument('-rotax', '--rotationAxis', type=coords, default='0,1,0',
+parser.add_argument('-rotax', '--rotation_axis', type=coords, default='0,1,0',
                     help='rotational axis as x,y,z (default: %(default)s)')
+                    
+parser.add_argument('-t', '--transparency', type=float_range(0.0, 1.0), default=1.0,
+                    help='face transparency. from 0 (invisible) to 1.0 (opaque) (url 3 only) (default: %(default)s)')
 
 parser.add_argument('-url', '--url', type=int, choices=range(0, len(url_list)), metavar=("{number from 0 to " + str(len(url_list)-1) + "}"), default=default_url,
                     help='url of online viewer, 0 to list (default: %(default)s)')
@@ -211,27 +220,47 @@ elif not os.path.isfile(browser_list[args.browser]):
   print(f"{__file__}: error: browser %s not found" % browser_list[args.browser], file=sys.stderr)
   sys.exit()
 
-verticesActive=True
-if "v" in args.hideElements:
-  verticesActive=False
-edgesActive=True
-if "e" in args.hideElements:
-  edgesActive=False
-facesActive=True
-if "f" in args.hideElements:
-  facesActive=False
+vertices_active=True
+if "v" in args.hide_elements:
+  vertices_active=False
+edges_active=True
+if "e" in args.hide_elements:
+  edges_active=False
+faces_active=True
+if "f" in args.hide_elements:
+  faces_active=False
 
-arg_str = "&vertexRadius=" + str(args.vertexRadius)
-arg_str += "&edgeRadius=" + str(args.edgeRadius)
-arg_str += "&verticesActive=" + str(verticesActive).lower()
-arg_str += "&edgesActive=" + str(edgesActive).lower()
-arg_str += "&facesActive=" + str(facesActive).lower()
-arg_str += "&useBaseColor=" + str(args.useBaseColor).lower()
-arg_str += "&transparency=" + str(1.0 - args.transparency)
-arg_str += "&backgroundColor=" + str(args.backgroundColor)
-arg_str += "&rotationSpeed=" + str(args.rotationSpeed)
-arg_str += "&rotationDirection=" + str(args.rotationAxis)
-
+if (args.url == 3):
+  arg_str = "&vertexRadius=" + str(args.vertex_radius)
+  arg_str += "&edgeRadius=" + str(args.edge_radius)
+  arg_str += "&verticesActive=" + str(vertices_active).lower()
+  arg_str += "&edgesActive=" + str(edges_active).lower()
+  arg_str += "&facesActive=" + str(faces_active).lower()
+  arg_str += "&useBaseColor=" + str(args.use_base_color).lower()
+  arg_str += "&backgroundColor=" + str(args.background_color)
+  arg_str += "&rotationSpeed=" + str(args.rotation_speed)
+  arg_str += "&rotationDirection=" + str(args.rotation_axis)
+  arg_str += "&transparency=" + str(1.0 - args.transparency)
+else:
+  arg_str = "&data-vertex-radius=" + str(args.vertex_radius)
+  arg_str += "&data-edge-radius=" + str(args.edge_radius)
+  arg_str += "&data-vertices-active=" + str(vertices_active).lower()
+  arg_str += "&data-edges-active=" + str(edges_active).lower()
+  arg_str += "&data-faces-active=" + str(faces_active).lower()
+  arg_str += "&data-background-color=" + "#" + str(args.background_color)
+  #simulate useBaseColor which colors vertices and edges black
+  if (not args.use_base_color):
+    args.vertex_color = "000000"
+    args.edge_color = "000000"
+  if (args.vertex_color != "none"):
+    arg_str += "&data-vertex-color=" + "#" + str(args.vertex_color)
+  if (args.edge_color != "none"):
+    arg_str += "&data-edge-color=" + "#" + str(args.edge_color)
+  if (args.face_color != "none"):
+    arg_str += "&data-face-color=" + "#" + str(args.face_color)
+  arg_str += "&data-rotation_speed=" + str(args.rotation_speed)
+  arg_str += "&data-rotation_direction=" + str(args.rotation_axis)
+  
 url = url_list[args.url]
 url = url.replace("PORT", str(args.port))
 url += arg_str

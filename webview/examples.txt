@@ -4,14 +4,14 @@ offview.py sssC.off
 offview.py iso_delta_f_3.off
 offview.py uc15.off -l -v 0.002 -e 0.002
 offview.py uc15.off -x v e
-offview.py uc15.off -t 0.5
+offview.py uc15_trasparent.off
 offview.py uc15.off -x f -v 0.01 -e 0.01 -B 000000
 offview.py uc15.off -rot 0.5 -rotax 0,1,0
 
 
 Examples using Antiprism command line input (www.antiprism.com)
 
-off_util geo_t3 | offview.py -t 0.25
+off_util geo_t3 | off_color -r A0.5 | offview.py
 conway p^2sD | off_color_radial | offview.py -x v e
 n_icons -n 32/8 -t 4 | offview.py
 n_icons -n 48/12 -t 6 -z 3 -M 36,27 | offview.py -url 2

@@ -22,7 +22,7 @@ webview_server.py
   seconds while a web page is loaded.
 
 -------------------------------------------------------------------------------
-offview.py - url can be changed to your own installation of simple-off-viewer.
+offview.py - url can be changed to your own installation of multi-off-viewer.
 You are welcome to use the url's provided. browser_path has been provided for
 some browsers, or add a path to a browser if necessary. The server process
 is killed after a default of 3 seconds. If this is not long enough the default
@@ -46,10 +46,10 @@ else:
 Current url list
 
 $ offview.py -url 0
-0 - listing (set default_url in /home/Roger/bin/offview.py)
-1 - https://www.interocitors.com (python author's site)
-2 - https://asliceofcuriosity.fr (threejs author's site)
-3 - Simple-Off-Viewer Live Window at www.interocitors.com
+0 - listing (set default_url in /mnt/c/lhome/roger/bin/offview.py)
+1 - https://www.interocitors.com full screen view (python author's site)
+2 - https://www.interocitors.com window view (python author's site)
+3 - https://asliceofcuriosity.fr (threejs author's site)
 
 Current browser list
 
@@ -121,7 +121,7 @@ proc = subprocess.Popen([r"python.exe", ...rest of the stuff
 
 
 ===============================================================================
-Version 2.0 helps (in Windows)
+Version 3.0 helps (in Windows)
 
 ---------------------
 use webview_server.py -h for avaiable parameters.
@@ -143,45 +143,48 @@ optional arguments:
 --------------
 use offview.py -h for avaiable parameters.
   
-usage: offview.py [-h] [-v VERTEXRADIUS] [-e EDGERADIUS]
-                  [-x {v,e,f} [{v,e,f} ...]] [-l] [-t TRANSPARENCY]
-                  [-B BACKGROUNDCOLOR] [-rot ROTATIONSPEED]
-                  [-rotax ROTATIONAXIS] [-url {number from 0 to 2}]
-                  [-browser {number from 0 to 3}]
-                  [-port {number from 0 to 65535}]
-                  [-sleep from 1 to 3600 seconds] [--version]
+usage: offview.py [-h] [-v VERTEX_RADIUS] [-e EDGE_RADIUS] [-x {v,e,f} [{v,e,f} ...]] [-l] [-V VERTEX_COLOR] [-E EDGE_COLOR] [-F FACE_COLOR] [-B BACKGROUND_COLOR] [-rot ROTATION_SPEED]
+                  [-rotax ROTATION_AXIS] [-t TRANSPARENCY] [-url {number from 0 to 3}] [-browser {number from 0 to 3}] [-port {number from 0 to 65535}] [-sleep from 1 to 3600 seconds] [--version]
                   [off_file]
 
 View an OFF file with an online html browser OFF file viewer.
 
+Written by Roger Kaufman <polyhedrasmith@gmail.com>
+
 positional arguments:
   off_file              OFF file. can also be from standard input
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
-  -v VERTEXRADIUS, --vertexRadius VERTEXRADIUS
+  -v VERTEX_RADIUS, --vertex_radius VERTEX_RADIUS
                         vertex sphere radius (range 0.0-1.0) (default: 0.03)
-  -e EDGERADIUS, --edgeRadius EDGERADIUS
+  -e EDGE_RADIUS, --edge_radius EDGE_RADIUS
                         edge cylinder radius (range 0.0-1.0) (default: 0.02)
-  -x {v,e,f} [{v,e,f} ...], --hideElements {v,e,f} [{v,e,f} ...]
+  -x {v,e,f} [{v,e,f} ...], --hide_elements {v,e,f} [{v,e,f} ...]
                         hide elements. to hide vertices, edges and faces
-  -l, --blackEdges      paint edges black (default: use defined colors)
-  -t TRANSPARENCY, --transparency TRANSPARENCY
-                        face transparency (range 0.0-1.0) (default: 0)
-  -B BACKGROUNDCOLOR, --backgroundColor BACKGROUNDCOLOR
+  -l, --black_edges     paint edges black (overrides -V,-E) (default: use defined colors)
+  -V VERTEX_COLOR, --vertex_color VERTEX_COLOR
+                        vertex color override in hexadecimal (url 1,2) (default: none)
+  -E EDGE_COLOR, --edge_color EDGE_COLOR
+                        edge color override in hexadecimal (url 1,2) (default: none)
+  -F FACE_COLOR, --face_color FACE_COLOR
+                        face color override in hexadecimal (url 1,2) (default: none)
+  -B BACKGROUND_COLOR, --background_color BACKGROUND_COLOR
                         background color in hexadecimal (default: cccccc)
-  -rot ROTATIONSPEED, --rotationSpeed ROTATIONSPEED
+  -rot ROTATION_SPEED, --rotation_speed ROTATION_SPEED
                         rotational speed (default: 0)
-  -rotax ROTATIONAXIS, --rotationAxis ROTATIONAXIS
+  -rotax ROTATION_AXIS, --rotation_axis ROTATION_AXIS
                         rotational axis as x,y,z (default: 0,1,0)
-  -url {number from 0 to 2}, --url {number from 0 to 2}
+  -t TRANSPARENCY, --transparency TRANSPARENCY
+                        face transparency. from 0 (invisible) to 1.0 (opaque) (url 3 only) (default: 1.0)
+  -url {number from 0 to 3}, --url {number from 0 to 3}
                         url of online viewer, 0 to list (default: 1)
   -browser {number from 0 to 3}, --browser {number from 0 to 3}
-                        browser, 0 to list (default: 1)
+                        browser, 0 to list (default: 2)
   -port {number from 0 to 65535}, --port {number from 0 to 65535}
                         port number for server (default: 8080)
   -sleep from 1 to 3600 seconds, --sleep from 1 to 3600 seconds
-                        time in seconds before server shutdown (default: 3)
+                        time in seconds before server shutdown (default: 4)
   --version             show program's version number and exit
 
 --------------

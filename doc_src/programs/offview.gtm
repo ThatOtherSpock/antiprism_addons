@@ -21,7 +21,7 @@
 <<EXAMPLES_START>>
 Display a geodesic model at one quarter opacity
 <<CMDS_START>>
-off_util geo_t3 | offview.py -t 0.25
+off_util geo_t3 | off_color -r A0.25 | offview.py
 <<CMDS_END>>
 
 Produce a model with conway notation, color it with off_color_radial and then

@@ -42,7 +42,7 @@ GOTO End
 :Syntax
 ECHO.
 ECHO command: %0
-ECHO Version: 2.4
+ECHO Version: 3.0
 ECHO Written by Roger Kaufman (polyhedrasmith@gmail.com)
 ECHO.
 ECHO Send OFF file to offview.py via WSL2

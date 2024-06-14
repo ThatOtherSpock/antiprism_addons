@@ -46,7 +46,7 @@ def port_checker(a):
     return num
 
 # defaults are set here
-__version__ = 2.3
+__version__ = 3.0
 default_port = 8080
 default_sleep = 0
 

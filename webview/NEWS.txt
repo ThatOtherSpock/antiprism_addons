@@ -1,5 +1,11 @@
 NEWS for Webview (https://www.interocitors.com/polyhedra/webview/index.html)
 
+Version 3.0
+06-13-23 Roger Kaufman <polyhedrasmith@gmail.com>
+         Changes
+            offview.py
+               Change to Multi-OFF-Viewer
+
 Version 2.5
 12-05-23 Roger Kaufman <polyhedrasmith@gmail.com>
          Changes
