@@ -97,7 +97,7 @@ def command_exists(command_name):
     return (exists, command_name)
 
 # defaults are set here
-__version__ = 3.0
+__version__ = 3.1
 verbose = False
 default_port = 8080
 default_sleep = 4
@@ -112,14 +112,12 @@ url_help = [
 f'0 - listing (set default_url in {__file__})',
 '1 - Full screen view',
 '2 - Window view',
-'3 - X_ite latest version',
 ]
 
 url_list = [
 'not used',
 'https://www.interocitors.com/polyhedra/x3dview.html?url=http://127.0.0.1:PORT/x3dview.wrl',
 'https://www.interocitors.com/polyhedra/x3dwin.html?url=http://127.0.0.1:PORT/x3dview.wrl',
-'https://www.interocitors.com/polyhedra/x3dlate.html?url=http://127.0.0.1:PORT/x3dview.wrl',
 ]
 
 # browser list

@@ -1,7 +1,14 @@
 NEWS for Webview (https://www.interocitors.com/polyhedra/webview/index.html)
 
+Version 3.1
+06-18-24 Roger Kaufman <polyhedrasmith@gmail.com>
+         Changes
+            offview.py
+               Check color input strings for 6 to 8 hex digits or 'invisible'
+               Allow invisible backgrounds
+
 Version 3.0
-06-13-23 Roger Kaufman <polyhedrasmith@gmail.com>
+06-13-24 Roger Kaufman <polyhedrasmith@gmail.com>
          Changes
             offview.py
                Change to Multi-OFF-Viewer

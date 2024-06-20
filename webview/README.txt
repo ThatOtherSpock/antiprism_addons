@@ -99,7 +99,6 @@ $ x3dview.py -url 0
 0 - listing (set default_url in x3dview.py)
 1 - Full screen view
 2 - Window view
-3 - X_ite latest version
 
 Current browser list
 
@@ -121,7 +120,7 @@ proc = subprocess.Popen([r"python.exe", ...rest of the stuff
 
 
 ===============================================================================
-Version 3.0 helps (in Windows)
+Version 3.1 helps (in Windows)
 
 ---------------------
 use webview_server.py -h for avaiable parameters.
@@ -143,8 +142,14 @@ optional arguments:
 --------------
 use offview.py -h for avaiable parameters.
   
-usage: offview.py [-h] [-v VERTEX_RADIUS] [-e EDGE_RADIUS] [-x {v,e,f} [{v,e,f} ...]] [-l] [-V VERTEX_COLOR] [-E EDGE_COLOR] [-F FACE_COLOR] [-B BACKGROUND_COLOR] [-rot ROTATION_SPEED]
-                  [-rotax ROTATION_AXIS] [-t TRANSPARENCY] [-url {number from 0 to 3}] [-browser {number from 0 to 3}] [-port {number from 0 to 65535}] [-sleep from 1 to 3600 seconds] [--version]
+usage: offview.py [-h] [-v VERTEX_RADIUS] [-e EDGE_RADIUS]
+                  [-x {v,e,f} [{v,e,f} ...]] [-l] [-V VERTEX_COLOR]
+                  [-E EDGE_COLOR] [-F FACE_COLOR] [-B BACKGROUND_COLOR]
+                  [-rot ROTATION_SPEED] [-rotax ROTATION_AXIS]
+                  [-t TRANSPARENCY] [-url {number from 0 to 3}]
+                  [-browser {number from 0 to 3}]
+                  [-port {number from 0 to 65535}]
+                  [-sleep from 1 to 3600 seconds] [--version]
                   [off_file]
 
 View an OFF file with an online html browser OFF file viewer.
@@ -162,25 +167,31 @@ options:
                         edge cylinder radius (range 0.0-1.0) (default: 0.02)
   -x {v,e,f} [{v,e,f} ...], --hide_elements {v,e,f} [{v,e,f} ...]
                         hide elements. to hide vertices, edges and faces
-  -l, --black_edges     paint edges black (overrides -V,-E) (default: use defined colors)
+  -l, --black_edges     paint edges black (overrides -V,-E) (default: use
+                        defined colors)
   -V VERTEX_COLOR, --vertex_color VERTEX_COLOR
-                        vertex color override in hexadecimal (url 1,2) (default: none)
+                        vertex color override. hexadecimal value of length 6
+                        or 8 or "invisible" (url 1,2)
   -E EDGE_COLOR, --edge_color EDGE_COLOR
-                        edge color override in hexadecimal (url 1,2) (default: none)
+                        edge color override. hexadecimal value of length 6 or
+                        8 or "invisible" (url 1,2)
   -F FACE_COLOR, --face_color FACE_COLOR
-                        face color override in hexadecimal (url 1,2) (default: none)
+                        face color override. hexadecimal value of length 6 or
+                        8 or "invisible" (url 1,2)
   -B BACKGROUND_COLOR, --background_color BACKGROUND_COLOR
-                        background color in hexadecimal (default: cccccc)
+                        background color. hexadecimal value of length 6 or
+                        "invisible" (default: cccccc)
   -rot ROTATION_SPEED, --rotation_speed ROTATION_SPEED
-                        rotational speed (default: 0)
+                        rotational speed (url 1,2) (default: 0)
   -rotax ROTATION_AXIS, --rotation_axis ROTATION_AXIS
-                        rotational axis as x,y,z (default: 0,1,0)
+                        rotational axis as x,y,z (url 1,2) (default: 0,1,0)
   -t TRANSPARENCY, --transparency TRANSPARENCY
-                        face transparency. from 0 (invisible) to 1.0 (opaque) (url 3 only) (default: 1.0)
+                        face transparency. from 0 (invisible) to 1.0 (opaque)
+                        (url 3 only) (default: 1.0)
   -url {number from 0 to 3}, --url {number from 0 to 3}
                         url of online viewer, 0 to list (default: 1)
   -browser {number from 0 to 3}, --browser {number from 0 to 3}
-                        browser, 0 to list (default: 2)
+                        browser, 0 to list (default: 1)
   -port {number from 0 to 65535}, --port {number from 0 to 65535}
                         port number for server (default: 8080)
   -sleep from 1 to 3600 seconds, --sleep from 1 to 3600 seconds
@@ -200,11 +211,13 @@ View VRML/X3D file with an online html browser VRML/X3D file viewer.
 if vr1tovr2 is in the path, it will internally convert from VRML 1.0 to VRML 2.0
 if tovrmlx3d (of view3dscene) exists, can convert VRML to X3D
 
+Written by Roger Kaufman <polyhedrasmith@gmail.com>
+
 positional arguments:
   x3d_file              VRML/X3D file (may be compressed). can also be from
                         standard input
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -v, --vrml2           convert vrml 1.0 to vrml 2.0 (done before -x)
   -x {x,c}, --x3d {x,c}
@@ -215,11 +228,11 @@ optional arguments:
   -url {number from 0 to 3}, --url {number from 0 to 3}
                         url of online viewer, 0 to list (default: 1)
   -browser {number from 0 to 3}, --browser {number from 0 to 3}
-                        browser, 0 to list (default: 1)
+                        browser, 0 to list (default: 2)
   -port {number from 0 to 65535}, --port {number from 0 to 65535}
                         port number for server (default: 8080)
   -sleep from 1 to 3600 seconds, --sleep from 1 to 3600 seconds
-                        time in seconds before server shutdown (default: 3)
+                        time in seconds before server shutdown (default: 4)
   --version             show program's version number and exit
 
 

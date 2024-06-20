@@ -30,6 +30,23 @@ import webbrowser
 import fileinput
 import tempfile
 import shutil
+import string
+
+#https://codeallow.com/check-a-string-is-hexadecimal-in-python/
+def color_check(s):
+    # if not set return nothing
+    if not s:
+      return;
+
+    # keyword 'invisible' is allowed
+    s = s.lower()
+    if s.lower() == "invisible":
+        return s
+
+    # if color specified it must be 6 or 8 hexadecimal digits
+    if not (((len(s) == 6) or (len(s) == 8)) and all(c in string.hexdigits for c in s)):
+        raise argparse.ArgumentTypeError("Colors must be hexadecimal values of length 6 or 8 or 'invisible'")
+    return s
 
 #https://stackoverflow.com/questions/55324449/how-to-specify-a-minimum-or-maximum-float-value-with-argparse
 def float_range(mini,maxi):
@@ -54,14 +71,14 @@ def float_range(mini,maxi):
     return float_range_checker
 
 #https://stackoverflow.com/questions/9978880/python-argument-parser-list-of-list-or-tuple-of-tuples
-def coords(s):
+def coords_check(s):
     try:
         x, y, z = map(float, s.split(','))
         return '{:f},{:f},{:f}'.format(x, y, z)
     except:
         raise argparse.ArgumentTypeError("Coordinates must be x,y,z")
 
-def port_checker(a):
+def port_check(a):
     num = int(a)
 
     if num < 0 or num > 65535:
@@ -107,8 +124,8 @@ f'0 - listing (set default_url in {__file__})',
 
 url_list = [
 'not used',
-'https://www.interocitors.com/polyhedra/offview.beta.html?url=http://127.0.0.1:PORT/offview.off',
-'https://www.interocitors.com/polyhedra/offwin.beta.html?url=http://127.0.0.1:PORT/offview.off',
+'https://www.interocitors.com/polyhedra/offview.html?url=http://127.0.0.1:PORT/offview.off',
+'https://www.interocitors.com/polyhedra/offwin.html?url=http://127.0.0.1:PORT/offview.off',
 'https://asliceofcuriosity.fr/blog/extra/polyhedra-viewer-antiprism.html?url=http://127.0.0.1:PORT/offview.off',
 ]
 
@@ -170,24 +187,24 @@ parser.add_argument('-x', '--hide_elements', nargs='+', choices=['v','e','f'], d
 parser.add_argument('-l', '--black_edges', dest='use_base_color', action='store_false', default=True,
                     help='paint edges black (overrides -V,-E) (default: use defined colors)')
                     
-parser.add_argument('-V', '--vertex_color', default="none",
-                    help='vertex color override in hexadecimal (url 1,2) (default: %(default)s)')
+parser.add_argument('-V', '--vertex_color', type=color_check, default="",
+                    help='vertex color override. hexadecimal value of length 6 or 8 or "invisible" (url 1,2)')
                     
-parser.add_argument('-E', '--edge_color', default="none",
-                    help='edge color override in hexadecimal (url 1,2) (default: %(default)s)')
+parser.add_argument('-E', '--edge_color', type=color_check, default="",
+                    help='edge color override. hexadecimal value of length 6 or 8 or "invisible" (url 1,2)')
                     
-parser.add_argument('-F', '--face_color', default="none",
-                    help='face color override in hexadecimal (url 1,2) (default: %(default)s)')
+parser.add_argument('-F', '--face_color', type=color_check, default="",
+                    help='face color override. hexadecimal value of length 6 or 8 or "invisible" (url 1,2)')
 
-parser.add_argument('-B', '--background_color', default="cccccc",
-                    help='background color in hexadecimal (default: %(default)s)')
+parser.add_argument('-B', '--background_color', type=color_check, default="cccccc",
+                    help='background color. hexadecimal value of length 6 or "invisible" (default: %(default)s)')
 
 parser.add_argument('-rot', '--rotation_speed', type=float, default=0,
-                    help='rotational speed (default: %(default)s)')
+                    help='rotational speed (url 1,2) (default: %(default)s)')
 
 # use -rotax=-x,y,z when x is negative
-parser.add_argument('-rotax', '--rotation_axis', type=coords, default='0,1,0',
-                    help='rotational axis as x,y,z (default: %(default)s)')
+parser.add_argument('-rotax', '--rotation_axis', type=coords_check, default='0,1,0',
+                    help='rotational axis as x,y,z (url 1,2) (default: %(default)s)')
                     
 parser.add_argument('-t', '--transparency', type=float_range(0.0, 1.0), default=1.0,
                     help='face transparency. from 0 (invisible) to 1.0 (opaque) (url 3 only) (default: %(default)s)')
@@ -198,7 +215,7 @@ parser.add_argument('-url', '--url', type=int, choices=range(0, len(url_list)), 
 parser.add_argument('-browser', '--browser', type=int, choices=range(0, len(browser_list)), metavar=("{number from 0 to " + str(len(browser_list)-1) + "}"), default=default_browser,
                     help='browser, 0 to list (default: %(default)s)')
 
-parser.add_argument('-port', '--port', type=port_checker, metavar=("{number from 0 to 65535}"), default=default_port,
+parser.add_argument('-port', '--port', type=port_check, metavar=("{number from 0 to 65535}"), default=default_port,
                     help='port number for server (default: %(default)s)')
 
 parser.add_argument('-sleep', '--sleep', type=float_range(1.0, 3600.0), metavar=("from 1 to 3600 seconds"), default=default_sleep,
@@ -230,6 +247,18 @@ faces_active=True
 if "f" in args.hide_elements:
   faces_active=False
 
+if (args.vertex_color == "invisible"):
+  vertices_active = False;
+  args.vertex_color = ""
+if (args.edge_color == "invisible"):
+  edges_active = False;
+  args.vertex_color = ""
+if (args.face_color == "invisible"):
+  faces_active = False;
+  args.face_color = ""
+if (args.background_color == "invisible"):
+  args.background_color = ""
+
 if (args.url == 3):
   arg_str = "&vertexRadius=" + str(args.vertex_radius)
   arg_str += "&edgeRadius=" + str(args.edge_radius)
@@ -237,7 +266,8 @@ if (args.url == 3):
   arg_str += "&edgesActive=" + str(edges_active).lower()
   arg_str += "&facesActive=" + str(faces_active).lower()
   arg_str += "&useBaseColor=" + str(args.use_base_color).lower()
-  arg_str += "&backgroundColor=" + str(args.background_color)
+  if (args.background_color):
+    arg_str += "&backgroundColor=" + str(args.background_color)
   arg_str += "&rotationSpeed=" + str(args.rotation_speed)
   arg_str += "&rotationDirection=" + str(args.rotation_axis)
   arg_str += "&transparency=" + str(1.0 - args.transparency)
@@ -247,19 +277,22 @@ else:
   arg_str += "&data-vertices-active=" + str(vertices_active).lower()
   arg_str += "&data-edges-active=" + str(edges_active).lower()
   arg_str += "&data-faces-active=" + str(faces_active).lower()
-  arg_str += "&data-background-color=" + "#" + str(args.background_color)
+  if (args.background_color):
+    arg_str += "&data-background-color=" + "#" + str(args.background_color)
+  else:
+    arg_str += "&data-background-color=" + "invisible"
   #simulate useBaseColor which colors vertices and edges black
   if (not args.use_base_color):
     args.vertex_color = "000000"
     args.edge_color = "000000"
-  if (args.vertex_color != "none"):
+  if (args.vertex_color):
     arg_str += "&data-vertex-color=" + "#" + str(args.vertex_color)
-  if (args.edge_color != "none"):
+  if (args.edge_color):
     arg_str += "&data-edge-color=" + "#" + str(args.edge_color)
-  if (args.face_color != "none"):
+  if (args.face_color):
     arg_str += "&data-face-color=" + "#" + str(args.face_color)
-  arg_str += "&data-rotation_speed=" + str(args.rotation_speed)
-  arg_str += "&data-rotation_direction=" + str(args.rotation_axis)
+  arg_str += "&data-rotation-speed=" + str(args.rotation_speed)
+  arg_str += "&data-rotation-axis=" + str(args.rotation_axis)
   
 url = url_list[args.url]
 url = url.replace("PORT", str(args.port))
