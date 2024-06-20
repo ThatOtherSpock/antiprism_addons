@@ -18,7 +18,7 @@ n_icons -n 32/8 -t 4 | offview.py
 n_icons -n 48/12 -t 6 -z 3 -M 36,27 | offview.py -url 2
 
 
-==================================================================
+===============================================================================
 VRML/X3D files which can be displayed via x3dview.py
 
 x3dview.py isosceles_tetrahedron.wrl
@@ -51,7 +51,7 @@ n_icons -n 32/8 -t 4 | off2vrml | x3dview.py
 n_icons -n 48/12 -t 6 -z 3 -M 36,27 | off2vrml | x3dview.py -url 2
  
 
-===============================
+-------------------------------------------------------------------------------
 X_Ite Browser can handle these file formats. Here are some examples that were
 converted from a minimal cube (cube.off).
 
