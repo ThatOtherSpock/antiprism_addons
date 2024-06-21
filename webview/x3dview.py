@@ -97,7 +97,7 @@ def command_exists(command_name):
     return (exists, command_name)
 
 # defaults are set here
-__version__ = 3.1
+__version__ = 3.2
 verbose = False
 default_port = 8080
 default_sleep = 4

@@ -20,7 +20,7 @@ GOTO End
 :Syntax
 ECHO.
 ECHO command: %0
-ECHO Version: 3.1
+ECHO Version: 3.2
 ECHO Written by Roger Kaufman (polyhedrasmith@gmail.com)
 ECHO.
 ECHO Send OFF file to offview.py via cygwin64

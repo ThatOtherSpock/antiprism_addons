@@ -1,5 +1,11 @@
 NEWS for Webview (https://www.interocitors.com/polyhedra/webview/index.html)
 
+Version 3.2
+06-21-24 Roger Kaufman <polyhedrasmith@gmail.com>
+         Changes
+            offview.py
+               Removed '#' prefix for colors from url's
+               
 Version 3.1
 06-18-24 Roger Kaufman <polyhedrasmith@gmail.com>
          Changes

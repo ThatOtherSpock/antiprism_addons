@@ -105,7 +105,7 @@ def command_exists(command_name):
     return (exists, command_name)
 
 # defaults are set here
-__version__ = 3.1
+__version__ = 3.2
 default_port = 8080
 default_sleep = 4
 default_url = 1
@@ -278,7 +278,7 @@ else:
   arg_str += "&data-edges-active=" + str(edges_active).lower()
   arg_str += "&data-faces-active=" + str(faces_active).lower()
   if (args.background_color):
-    arg_str += "&data-background-color=" + "#" + str(args.background_color)
+    arg_str += "&data-background-color=" + str(args.background_color)
   else:
     arg_str += "&data-background-color=" + "invisible"
   #simulate useBaseColor which colors vertices and edges black
@@ -286,11 +286,11 @@ else:
     args.vertex_color = "000000"
     args.edge_color = "000000"
   if (args.vertex_color):
-    arg_str += "&data-vertex-color=" + "#" + str(args.vertex_color)
+    arg_str += "&data-vertex-color=" + str(args.vertex_color)
   if (args.edge_color):
-    arg_str += "&data-edge-color=" + "#" + str(args.edge_color)
+    arg_str += "&data-edge-color=" + str(args.edge_color)
   if (args.face_color):
-    arg_str += "&data-face-color=" + "#" + str(args.face_color)
+    arg_str += "&data-face-color=" + str(args.face_color)
   arg_str += "&data-rotation-speed=" + str(args.rotation_speed)
   arg_str += "&data-rotation-axis=" + str(args.rotation_axis)
   
